@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Ridge Community Health Clinic | TEAM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"><\/script>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col">
+    <!-- Navigation Bar -->
+    <header class="bg-white border-b border-slate-100 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-2xl bg-teal-700 text-white flex items-center justify-center font-bold">
+                    <i class="fa-solid fa-mountain-sun"></i>
+                </div>
+                <span class="text-xl font-bold">Blue Ridge CHC</span>
+            </a>
+            <nav class="hidden md:flex gap-4">
+                <a href="index.html" class="px-3 py-1.5 rounded-xl font-medium text-slate-600 hover:text-teal-700">Home</a>
+                <a href="team.html" class="px-3 py-1.5 rounded-xl font-medium text-teal-700 font-bold bg-teal-50">Meet the Team</a>
+                <a href="services.html" class="px-3 py-1.5 rounded-xl font-medium text-slate-600 hover:text-teal-700">Services</a>
+                <a href="contact.html" class="px-3 py-1.5 rounded-xl font-medium text-slate-600 hover:text-teal-700">Contact</a>
+            </nav>
+            <a href="contact.html" class="bg-teal-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold">Book Appointment</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+
+            <!-- Header Banner -->
+            <div class="bg-white border-b border-slate-100 py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+                    <span class="text-clinic-600 font-semibold text-sm tracking-wider uppercase block mb-2">Multidisciplinary Clinicians &amp; Advocates</span>
+                    <h1 class="text-4xl sm:text-5xl font-extrabold text-neutralDark tracking-tight">Meet Our Dedicated Providers</h1>
+                    <p class="text-neutralMuted mt-4 text-base sm:text-lg">
+                        At Blue Ridge CHC, our clinical staff combines Board-Certified Physicians, specialized Nurse Practitioners, Licensed Social Workers, and grassroots Outreach Officers working as a unified team.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Team Grid Section -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+                
+                <!-- Category 1: Physicians (3 Providers) -->
+                <div>
+                    <div class="flex items-center gap-3 mb-8 pb-3 border-b border-slate-200">
+                        <div class="w-10 h-10 rounded-xl bg-clinic-100 text-clinic-700 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-user-doctor"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-neutralDark">Staff Physicians</h2>
+                            <p class="text-xs text-neutralMuted">Board-Certified in Family Medicine, Internal Medicine, and Pediatrics</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Physician 1 -->
+                        <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col">
+                            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&amp;fit=crop&amp;q=80&amp;w=700" alt="Dr. Julian Vance, MD" class="w-full h-72 object-cover object-top">
+                            <div class="p-6 flex-grow flex flex-col">
+                                <span class="text-clinic-700 font-bold text-xs uppercase tracking-wider mb-1">Chief Medical Officer</span>
+                                <h3 class="text-xl font-bold text-neutralDark">Dr. Julian Vance, MD</h3>
+                                <p class="text-xs font-medium text-neutralMuted mb-3">Family Medicine &amp; Preventive Health</p>
+                                <p class="text-neutralMuted text-sm leading-relaxed flex-grow">
+                                    Dr. Vance earned his MD from the University of Virginia School of Medicine and completed his residency in Shenandoah Valley community health. He champions chronic metabolic management and evidence-based rural preventative healthcare.
+                                </p>
+                                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-neutralMuted">
+                                    <span><i class="fa-solid fa-graduation-cap text-clinic-600 mr-1"></i> UVA School of Med</span>
+                                    <span class="font-medium text-clinic-700">14 Yrs Experience</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Physician 2 -->
+                        <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col">
+                            <img src="https://images.unsplash.com/photo-1594824813501-4838e2fae45f?auto=format&amp;fit=crop&amp;q=80&amp;w=700" alt="Dr. Anita Sharma, MD" class="w-full h-72 object-cover object-top">
+                            <div class="p-6 flex-grow flex flex-col">
+                                <span class="text-clinic-700 font-bold text-xs uppercase tracking-wider mb-1">Internal Medicine Specialist</span>
+                                <h3 class="text-xl font-bold text-neutralDark">Dr. Anita Sharma, MD</h3>
+                                <p class="text-xs font-medium text-neutralMuted mb-3">Cardiometabolic &amp; Geriatric Health</p>
+                                <p class="text-neutralMuted text-sm leading-relaxed flex-grow">
+                                    Specializing in hypertension, adult diabetes, and complex multi-system health conditions, Dr. Sharma brings over a decade of hospitalist and outpatient clinical care. She leads our sliding-scale senior wellness initiatives.
+                                </p>
+                                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-neutralMuted">
+                                    <span><i class="fa-solid fa-graduation-cap text-clinic-600 mr-1"></i> VCU Health MCV</span>
+                                    <span class="font-medium text-clinic-700">11 Yrs Experience</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Physician 3 -->
+                        <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col">
+                            <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&amp;fit=crop&amp;q=80&amp;w=700" alt="Dr. Carlos Morales, DO" class="w-full h-72 object-cover object-top">
+                            <div class="p-6 flex-grow flex flex-col">
+                                <span class="text-clinic-700 font-bold text-xs uppercase tracking-wider mb-1">Pediatric &amp; Adolescent Care</span>
+                                <h3 class="text-xl font-bold text-neutralDark">Dr. Carlos Morales, DO</h3>
+                                <p class="text-xs font-medium text-neutralMuted mb-3">Pediatrics &amp; Osteopathic Medicine</p>
+                                <p class="text-neutralMuted text-sm leading-relaxed flex-grow">
+                                    A bilingual pediatrician fluent in Spanish and English, Dr. Morales is passionate about early childhood developmental screenings, asthma mitigation, and sports physicals for local Staunton and Augusta County youth.
+                                </p>
+                                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-neutralMuted">
+                                    <span><i class="fa-solid fa-graduation-cap text-clinic-600 mr-1"></i> VCOM Osteopathic Med</span>
+                                    <span class="font-medium text-clinic-700">Bilingual (EN/ES)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2: Nurse Practitioners (2 Providers) -->
+                <div>
+                    <div class="flex items-center gap-3 mb-8 pb-3 border-b border-slate-200">
+                        <div class="w-10 h-10 rounded-xl bg-skyClinic-100 text-skyClinic-700 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-notes-medical"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-neutralDark">Nurse Practitioners</h2>
+                            <p class="text-xs text-neutralMuted">Advanced Practice Registered Nurses delivering primary care &amp; mental wellness</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- NP 1 -->
+                        <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col sm:flex-row">
+                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&amp;fit=crop&amp;q=80&amp;w=600" alt="Sarah Jenkins, FNP-C" class="w-full sm:w-2/5 h-64 sm:h-auto object-cover object-top">
+                            <div class="p-6 flex-grow flex flex-col justify-center">
+                                <span class="text-skyClinic-700 font-bold text-xs uppercase tracking-wider mb-1">Family Nurse Practitioner</span>
+                                <h3 class="text-xl font-bold text-neutralDark">Sarah Jenkins, FNP-C</h3>
+                                <p class="text-xs font-medium text-neutralMuted mb-3">Women's Health &amp; Preventive Screenings</p>
+                                <p class="text-neutralMuted text-sm leading-relaxed mb-4">
+                                    Sarah specializes in prenatal consultations, cervical cancer screenings, and adolescent routine care. She previously served with the Augusta Free Clinic and brings a warm, empathetic listener approach to community medicine.
+                                </p>
+                                <div class="text-xs text-neutralMuted flex items-center gap-4">
+                                    <span><i class="fa-solid fa-check-circle text-skyClinic-600 mr-1"></i> Certified Nurse Practitioner</span>
+                                    <span><i class="fa-solid fa-heart text-rose-500 mr-1"></i> Women's Wellness</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- NP 2 -->
+                        <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col sm:flex-row">
+                            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&amp;fit=crop&amp;q=80&amp;w=600" alt="David K. Campbell, PMHNP-BC" class="w-full sm:w-2/5 h-64 sm:h-auto object-cover object-top">
+                            <div class="p-6 flex-grow flex flex-col justify-center">
+                                <span class="text-skyClinic-700 font-bold text-xs uppercase tracking-wider mb-1">Psychiatric Mental Health NP</span>
+                                <h3 class="text-xl font-bold text-neutralDark">David K. Campbell, PMHNP-BC</h3>
+                                <p class="text-xs font-medium text-neutralMuted mb-3">Psychopharmacology &amp; Mood Disorders</p>
+                                <p class="text-neutralMuted text-sm leading-relaxed mb-4">
+                                    David leads our integrated psychopharmacology consultations, helping patients manage major depression, generalized anxiety, and ADHD. He coordinates directly with our primary physicians to prevent harmful drug interactions.
+                                </p>
+                                <div class="text-xs text-neutralMuted flex items-center gap-4">
+                                    <span><i class="fa-solid fa-check-circle text-skyClinic-600 mr-1"></i> Board Certified PMHNP</span>
+                                    <span><i class="fa-solid fa-brain text-clinic-600 mr-1"></i> Integrated Psychiatry</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 3: Licensed Social Workers (2 Providers) -->
+                <div>
+                    <div class="flex items-center gap-3 mb-8 pb-3 border-b border-slate-200">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-neutralDark">Licensed Clinical Social Workers</h2>
+                            <p class="text-xs text-neutralMuted">Compassionate psychotherapy, behavioral interventions, and trauma support</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- LCSW 1 -->
+                        <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col sm:flex-row">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&amp;fit=crop&amp;q=80&amp;w=600" alt="Rachel Adams, LCSW" class="w-full sm:w-2/5 h-64 sm:h-auto object-cover object-top">
+                            <div class="p-6 flex-grow flex flex-col justify-center">
+                                <span class="text-emerald-700 font-bold text-xs uppercase tracking-wider mb-1">Clinical Social Work Supervisor</span>
+                                <h3 class="text-xl font-bold text-neutralDark">Rachel Adams, LCSW</h3>
+                                <p class="text-xs font-medium text-neutralMuted mb-3">Cognitive Behavioral &amp; Trauma Therapy</p>
+                                <p class="text-neutralMuted text-sm leading-relaxed mb-4">
+                                    Rachel holds an MSW from James Madison University and has 12 years of clinical counseling experience. She facilitates individual psychotherapy for grief, chronic disease adjustment, and domestic trauma survivors.
+                                </p>
+                                <div class="text-xs text-neutralMuted flex items-center gap-3">
+                                    <span><i class="fa-solid fa-ribbon text-emerald-600 mr-1"></i> EMDR Trained</span>
+                                    <span><i class="fa-solid fa-users text-clinic-700 mr-1"></i> Adult Support Groups</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- LCSW 2 -->
+                        <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col sm:flex-row">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&amp;fit=crop&amp;q=80&amp;w=600" alt="Marcus Thorne, LCSW" class="w-full sm:w-2/5 h-64 sm:h-auto object-cover object-top">
+                            <div class="p-6 flex-grow flex flex-col justify-center">
+                                <span class="text-emerald-700 font-bold text-xs uppercase tracking-wider mb-1">Addiction Recovery Specialist</span>
+                                <h3 class="text-xl font-bold text-neutralDark">Marcus Thorne, LCSW</h3>
+                                <p class="text-xs font-medium text-neutralMuted mb-3">Substance Use Counseling &amp; Family Systems</p>
+                                <p class="text-neutralMuted text-sm leading-relaxed mb-4">
+                                    Marcus specializes in harm-reduction strategies, relapse prevention, and adolescent behavioral counseling. He coordinates with regional peer-recovery groups and local Staunton community diversion programs.
+                                </p>
+                                <div class="text-xs text-neutralMuted flex items-center gap-3">
+                                    <span><i class="fa-solid fa-hands-holding text-emerald-600 mr-1"></i> Harm Reduction</span>
+                                    <span><i class="fa-solid fa-house-user text-clinic-700 mr-1"></i> Family Counseling</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 4: Community Outreach Officers (2 Advocates) -->
+                <div>
+                    <div class="flex items-center gap-3 mb-8 pb-3 border-b border-slate-200">
+                        <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-bullhorn"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-neutralDark">Community Outreach Officers</h2>
+                            <p class="text-xs text-neutralMuted">Grassroots health education, benefit enrollment, and rural patient navigation</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Outreach 1 -->
+                        <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col sm:flex-row">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&amp;fit=crop&amp;q=80&amp;w=600" alt="Elena Rostova, MPH" class="w-full sm:w-2/5 h-64 sm:h-auto object-cover object-top">
+                            <div class="p-6 flex-grow flex flex-col justify-center">
+                                <span class="text-amber-700 font-bold text-xs uppercase tracking-wider mb-1">Director of Community Health</span>
+                                <h3 class="text-xl font-bold text-neutralDark">Elena Rostova, MPH</h3>
+                                <p class="text-xs font-medium text-neutralMuted mb-3">Public Health &amp; Mobile Clinic Strategy</p>
+                                <p class="text-neutralMuted text-sm leading-relaxed mb-4">
+                                    Elena leads the clinic's mobile outreach vehicle, deploying blood pressure and glucose screenings to rural areas throughout Augusta County. She manages our health equity grant initiatives and community partnerships.
+                                </p>
+                                <div class="text-xs text-neutralMuted flex items-center gap-3">
+                                    <span><i class="fa-solid fa-van-shuttle text-amber-600 mr-1"></i> Mobile Clinic Lead</span>
+                                    <span><i class="fa-solid fa-chart-line text-clinic-700 mr-1"></i> Public Health (MPH)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Outreach 2 -->
+                        <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col sm:flex-row">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&amp;fit=crop&amp;q=80&amp;w=600" alt="Kenneth Washington, BSW, CHW" class="w-full sm:w-2/5 h-64 sm:h-auto object-cover object-top">
+                            <div class="p-6 flex-grow flex flex-col justify-center">
+                                <span class="text-amber-700 font-bold text-xs uppercase tracking-wider mb-1">Senior Patient Navigator</span>
+                                <h3 class="text-xl font-bold text-neutralDark">Kenneth "Kenny" Washington, BSW, CHW</h3>
+                                <p class="text-xs font-medium text-neutralMuted mb-3">Medicaid/SNAP Enrollment &amp; Housing Liaison</p>
+                                <p class="text-neutralMuted text-sm leading-relaxed mb-4">
+                                    A lifetime Staunton resident, Kenny assists patients with Medicaid expansion enrollment, prescription discount card applications, and coordination with local food pantries and emergency housing providers.
+                                </p>
+                                <div class="text-xs text-neutralMuted flex items-center gap-3">
+                                    <span><i class="fa-solid fa-id-card text-amber-600 mr-1"></i> Certified Health Worker</span>
+                                    <span><i class="fa-solid fa-bus text-clinic-700 mr-1"></i> Transit Assistance</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-12 text-center text-sm border-t border-slate-800">
+        <p>&copy; 2026 Blue Ridge Community Health Clinic. 412 N Augusta St, Staunton, VA 24401 | (540) 885-2300</p>
+    </footer>
+</body>
+</html>
