@@ -1,36 +1,174 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blue Ridge Community Health Clinic | HOME</title>
+    <title>Blue Ridge Community Health Clinic | Staunton, VA</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"><\/script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        clinic: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            200: '#99f6e4',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        },
+                        skyClinic: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                        },
+                        neutralDark: '#0f172a',
+                        neutralMuted: '#64748b',
+                        surface: '#f8fafc',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #f8fafc; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        
+        .page-view {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.25s ease-in-out;
+        }
+        .page-view.active {
+            display: block;
+            opacity: 1;
+        }
+        
+        /* Custom focus ring */
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.2);
+            border-color: #0d9488;
+        }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col">
-    <!-- Navigation Bar -->
-    <header class="bg-white border-b border-slate-100 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-2xl bg-teal-700 text-white flex items-center justify-center font-bold">
-                    <i class="fa-solid fa-mountain-sun"></i>
+<body class="bg-surface text-neutralDark font-sans antialiased min-h-screen flex flex-col selection:bg-clinic-100 selection:text-clinic-900">
+
+    <!-- Accessible Notice & Standalone File Exporter Toggle -->
+    <div class="bg-clinic-900 text-clinic-50 text-xs py-2 px-4 border-b border-clinic-800">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+                <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-clinic-700 text-clinic-100">
+                    <i class="fa-solid fa-heart-pulse mr-1.5 text-rose-400"></i> Federally Qualified Health Center Look-Alike
+                </span>
+                <span class="hidden sm:inline text-clinic-200">Serving Staunton & Augusta County with a sliding-fee discount program.</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="tel:5408852300" class="hover:text-white flex items-center gap-1 font-medium">
+                    <i class="fa-solid fa-phone text-clinic-400"></i> (540) 885-2300
+                </a>
+                <span class="text-clinic-700">|</span>
+                <button onclick="openExportModal()" class="text-clinic-200 hover:text-white flex items-center gap-1 font-semibold underline underline-offset-2">
+                    <i class="fa-solid fa-code"></i> Export 4 HTML Files
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Global Header -->
+    <header class="bg-white/95 backdrop-blur-md sticky top-0 z-40 border-b border-slate-100 shadow-sm transition-all duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Logo -->
+                <a href="index.html" class="nav-link flex items-center gap-3 group" data-page="home">
+                    <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-clinic-700 to-clinic-500 text-white flex items-center justify-center shadow-md shadow-clinic-700/20 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-mountain-sun text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold tracking-tight text-neutralDark block leading-none">Blue Ridge CHC</span>
+                        <span class="text-xs font-medium text-neutralMuted tracking-wider uppercase">Community Health Clinic</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+                    <a href="index.html" class="nav-link px-4 py-2 rounded-xl text-sm font-semibold transition-colors text-clinic-700 bg-clinic-50" data-page="home">
+                        Home
+                    </a>
+                    <a href="team.html" class="nav-link px-4 py-2 rounded-xl text-sm font-semibold transition-colors text-neutralMuted hover:text-clinic-700 hover:bg-slate-50" data-page="team">
+                        Meet the Team
+                    </a>
+                    <a href="services.html" class="nav-link px-4 py-2 rounded-xl text-sm font-semibold transition-colors text-neutralMuted hover:text-clinic-700 hover:bg-slate-50" data-page="services">
+                        Services & Care
+                    </a>
+                    <a href="contact.html" class="nav-link px-4 py-2 rounded-xl text-sm font-semibold transition-colors text-neutralMuted hover:text-clinic-700 hover:bg-slate-50" data-page="contact">
+                        Contact & Hours
+                    </a>
+                </nav>
+
+                <!-- Desktop Appointment CTA -->
+                <div class="hidden md:flex items-center gap-3">
+                    <a href="contact.html" class="nav-link bg-clinic-700 hover:bg-clinic-800 text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm hover:shadow-md transition-all flex items-center gap-2" data-page="contact">
+                        <i class="fa-regular fa-calendar-check text-clinic-200"></i>
+                        <span>Schedule Visit</span>
+                    </a>
                 </div>
-                <span class="text-xl font-bold">Blue Ridge CHC</span>
+
+                <!-- Mobile Hamburger Button -->
+                <button id="mobile-menu-toggle" class="md:hidden p-2 rounded-xl text-neutralDark hover:bg-slate-100 focus:outline-none" aria-label="Toggle Navigation Menu">
+                    <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-nav" class="hidden md:hidden bg-white border-t border-slate-100 shadow-xl px-4 pt-3 pb-6 space-y-2">
+            <a href="index.html" class="nav-link block px-4 py-3 rounded-xl text-base font-semibold text-clinic-700 bg-clinic-50" data-page="home">
+                <i class="fa-solid fa-house w-6 text-clinic-600"></i> Home
             </a>
-            <nav class="hidden md:flex gap-4">
-                <a href="index.html" class="px-3 py-1.5 rounded-xl font-medium text-teal-700 font-bold bg-teal-50">Home</a>
-                <a href="team.html" class="px-3 py-1.5 rounded-xl font-medium text-slate-600 hover:text-teal-700">Meet the Team</a>
-                <a href="services.html" class="px-3 py-1.5 rounded-xl font-medium text-slate-600 hover:text-teal-700">Services</a>
-                <a href="contact.html" class="px-3 py-1.5 rounded-xl font-medium text-slate-600 hover:text-teal-700">Contact</a>
-            </nav>
-            <a href="contact.html" class="bg-teal-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold">Book Appointment</a>
+            <a href="team.html" class="nav-link block px-4 py-3 rounded-xl text-base font-semibold text-neutralMuted hover:text-clinic-700 hover:bg-slate-50" data-page="team">
+                <i class="fa-solid fa-user-doctor w-6 text-clinic-600"></i> Meet the Team
+            </a>
+            <a href="services.html" class="nav-link block px-4 py-3 rounded-xl text-base font-semibold text-neutralMuted hover:text-clinic-700 hover:bg-slate-50" data-page="services">
+                <i class="fa-solid fa-stethoscope w-6 text-clinic-600"></i> Services & Care
+            </a>
+            <a href="contact.html" class="nav-link block px-4 py-3 rounded-xl text-base font-semibold text-neutralMuted hover:text-clinic-700 hover:bg-slate-50" data-page="contact">
+                <i class="fa-solid fa-location-dot w-6 text-clinic-600"></i> Contact & Hours
+            </a>
+            <div class="pt-3">
+                <a href="contact.html" class="nav-link block text-center bg-clinic-700 text-white font-semibold py-3 px-4 rounded-xl shadow-md" data-page="contact">
+                    Schedule an Appointment
+                </a>
+            </div>
         </div>
     </header>
 
-    <!-- Main Content -->
+    <!-- MAIN VIEW CONTAINER -->
     <main class="flex-grow">
 
+        <!-- ========================================== -->
+        <!-- PAGE 1: INDEX.HTML (HOME)                  -->
+        <!-- ========================================== -->
+        <div id="view-home" class="page-view active">
             <!-- Hero Section -->
             <section class="relative bg-gradient-to-b from-clinic-50/70 via-white to-surface py-16 lg:py-24 overflow-hidden border-b border-slate-100">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -78,7 +216,9 @@
                         <div class="lg:col-span-5 relative">
                             <div class="relative mx-auto max-w-md lg:max-w-none">
                                 <div class="relative overflow-hidden rounded-3xl shadow-2xl border-4 border-white bg-slate-100">
-                                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&amp;fit=crop&amp;q=80&amp;w=1000" alt="Modern clinic greeting reception at Blue Ridge CHC" class="w-full h-[450px] object-cover object-center">
+                                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1000" 
+                                         alt="Modern clinic greeting reception at Blue Ridge CHC" 
+                                         class="w-full h-[450px] object-cover object-center">
                                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
                                     <div class="absolute bottom-6 left-6 right-6 text-white">
                                         <div class="flex items-center gap-2 mb-1">
@@ -95,7 +235,7 @@
                                         <i class="fa-solid fa-shield-halved"></i>
                                     </div>
                                     <div>
-                                        <div class="text-xs font-semibold text-neutralDark">Medicaid &amp; Medicare</div>
+                                        <div class="text-xs font-semibold text-neutralDark">Medicaid & Medicare</div>
                                         <div class="text-[11px] text-neutralMuted">Accepted alongside self-pay</div>
                                     </div>
                                 </div>
@@ -111,7 +251,7 @@
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-center max-w-3xl mx-auto mb-16">
                         <span class="text-clinic-600 font-semibold text-sm tracking-wider uppercase block mb-2">Our Community Mission</span>
-                        <h2 class="text-3xl sm:text-4xl font-bold text-neutralDark tracking-tight">Rooted in Dignity, Access &amp; Excellence</h2>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-neutralDark tracking-tight">Rooted in Dignity, Access & Excellence</h2>
                         <p class="text-neutralMuted mt-4 text-base sm:text-lg">
                             Blue Ridge Community Health Clinic exists to eliminate barriers to high quality physical and psychological wellbeing. We offer integrated care models that treat the whole person.
                         </p>
@@ -123,7 +263,7 @@
                             <div class="w-14 h-14 rounded-2xl bg-clinic-100 text-clinic-700 flex items-center justify-center text-2xl mb-6 group-hover:bg-clinic-700 group-hover:text-white transition-colors">
                                 <i class="fa-solid fa-stethoscope"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-neutralDark mb-3">Primary &amp; Preventative Care</h3>
+                            <h3 class="text-xl font-bold text-neutralDark mb-3">Primary & Preventative Care</h3>
                             <p class="text-neutralMuted text-sm leading-relaxed mb-4">
                                 From routine wellness checkups and immunizations to acute sickness treatment and chronic disease monitoring, our medical team delivers lifelong care for patients of all ages.
                             </p>
@@ -151,7 +291,7 @@
                             <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-2xl mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors">
                                 <i class="fa-solid fa-hand-holding-hand"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-neutralDark mb-3">Community Advocacy &amp; Outreach</h3>
+                            <h3 class="text-xl font-bold text-neutralDark mb-3">Community Advocacy & Outreach</h3>
                             <p class="text-neutralMuted text-sm leading-relaxed mb-4">
                                 Our dedicated outreach team conducts rural wellness screenings, connects families to transportation and food security assistance, and provides enrollment support for Medicaid and SNAP.
                             </p>
@@ -198,17 +338,1005 @@
                         "Having a community clinic right here in Staunton that looks at my diabetes, my depression, and my pharmacy costs in one coordinated visit changed our family's health forever."
                     </p>
                     <div class="pt-2">
-                        <div class="font-bold text-neutralDark">Maria S. &amp; Family</div>
+                        <div class="font-bold text-neutralDark">Maria S. & Family</div>
                         <div class="text-xs text-neutralMuted">Staunton, Virginia Residents since 2012</div>
                     </div>
                 </div>
             </section>
-        
+        </div>
+
+        <!-- ========================================== -->
+        <!-- PAGE 2: TEAM.HTML (MEET THE TEAM)          -->
+        <!-- ========================================== -->
+        <div id="view-team" class="page-view">
+            <!-- Header Banner -->
+            <div class="bg-white border-b border-slate-100 py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+                    <span class="text-clinic-600 font-semibold text-sm tracking-wider uppercase block mb-2">Multidisciplinary Clinicians & Advocates</span>
+                    <h1 class="text-4xl sm:text-5xl font-extrabold text-neutralDark tracking-tight">Meet Our Dedicated Providers</h1>
+                    <p class="text-neutralMuted mt-4 text-base sm:text-lg">
+                        At Blue Ridge CHC, our clinical staff combines Board-Certified Physicians, specialized Nurse Practitioners, Licensed Social Workers, and grassroots Outreach Officers working as a unified team.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Team Grid Section -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+                
+                <!-- Category 1: Physicians (3 Providers) -->
+                <div>
+                    <div class="flex items-center gap-3 mb-8 pb-3 border-b border-slate-200">
+                        <div class="w-10 h-10 rounded-xl bg-clinic-100 text-clinic-700 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-user-doctor"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-neutralDark">Staff Physicians</h2>
+                            <p class="text-xs text-neutralMuted">Board-Certified in Family Medicine, Internal Medicine, and Pediatrics</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Physician 1 -->
+                        <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col">
+                            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=700" 
+                                 alt="Dr. Julian Vance, MD" 
+                                 class="w-full h-72 object-cover object-top">
+                            <div class="p-6 flex-grow flex flex-col">
+                                <span class="text-clinic-700 font-bold text-xs uppercase tracking-wider mb-1">Chief Medical Officer</span>
+                                <h3 class="text-xl font-bold text-neutralDark">Dr. Julian Vance, MD</h3>
+                                <p class="text-xs font-medium text-neutralMuted mb-3">Family Medicine & Preventive Health</p>
+                                <p class="text-neutralMuted text-sm leading-relaxed flex-grow">
+                                    Dr. Vance earned his MD from the University of Virginia School of Medicine and completed his residency in Shenandoah Valley community health. He champions chronic metabolic management and evidence-based rural preventative healthcare.
+                                </p>
+                                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-neutralMuted">
+                                    <span><i class="fa-solid fa-graduation-cap text-clinic-600 mr-1"></i> UVA School of Med</span>
+                                    <span class="font-medium text-clinic-700">14 Yrs Experience</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Physician 2 -->
+                        <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col">
+                            <img src="https://images.unsplash.com/photo-1594824813501-4838e2fae45f?auto=format&fit=crop&q=80&w=700" 
+                                 alt="Dr. Anita Sharma, MD" 
+                                 class="w-full h-72 object-cover object-top">
+                            <div class="p-6 flex-grow flex flex-col">
+                                <span class="text-clinic-700 font-bold text-xs uppercase tracking-wider mb-1">Internal Medicine Specialist</span>
+                                <h3 class="text-xl font-bold text-neutralDark">Dr. Anita Sharma, MD</h3>
+                                <p class="text-xs font-medium text-neutralMuted mb-3">Cardiometabolic & Geriatric Health</p>
+                                <p class="text-neutralMuted text-sm leading-relaxed flex-grow">
+                                    Specializing in hypertension, adult diabetes, and complex multi-system health conditions, Dr. Sharma brings over a decade of hospitalist and outpatient clinical care. She leads our sliding-scale senior wellness initiatives.
+                                </p>
+                                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-neutralMuted">
+                                    <span><i class="fa-solid fa-graduation-cap text-clinic-600 mr-1"></i> VCU Health MCV</span>
+                                    <span class="font-medium text-clinic-700">11 Yrs Experience</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Physician 3 -->
+                        <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col">
+                            <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=700" 
+                                 alt="Dr. Carlos Morales, DO" 
+                                 class="w-full h-72 object-cover object-top">
+                            <div class="p-6 flex-grow flex flex-col">
+                                <span class="text-clinic-700 font-bold text-xs uppercase tracking-wider mb-1">Pediatric & Adolescent Care</span>
+                                <h3 class="text-xl font-bold text-neutralDark">Dr. Carlos Morales, DO</h3>
+                                <p class="text-xs font-medium text-neutralMuted mb-3">Pediatrics & Osteopathic Medicine</p>
+                                <p class="text-neutralMuted text-sm leading-relaxed flex-grow">
+                                    A bilingual pediatrician fluent in Spanish and English, Dr. Morales is passionate about early childhood developmental screenings, asthma mitigation, and sports physicals for local Staunton and Augusta County youth.
+                                </p>
+                                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-neutralMuted">
+                                    <span><i class="fa-solid fa-graduation-cap text-clinic-600 mr-1"></i> VCOM Osteopathic Med</span>
+                                    <span class="font-medium text-clinic-700">Bilingual (EN/ES)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2: Nurse Practitioners (2 Providers) -->
+                <div>
+                    <div class="flex items-center gap-3 mb-8 pb-3 border-b border-slate-200">
+                        <div class="w-10 h-10 rounded-xl bg-skyClinic-100 text-skyClinic-700 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-notes-medical"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-neutralDark">Nurse Practitioners</h2>
+                            <p class="text-xs text-neutralMuted">Advanced Practice Registered Nurses delivering primary care & mental wellness</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- NP 1 -->
+                        <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col sm:flex-row">
+                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=600" 
+                                 alt="Sarah Jenkins, FNP-C" 
+                                 class="w-full sm:w-2/5 h-64 sm:h-auto object-cover object-top">
+                            <div class="p-6 flex-grow flex flex-col justify-center">
+                                <span class="text-skyClinic-700 font-bold text-xs uppercase tracking-wider mb-1">Family Nurse Practitioner</span>
+                                <h3 class="text-xl font-bold text-neutralDark">Sarah Jenkins, FNP-C</h3>
+                                <p class="text-xs font-medium text-neutralMuted mb-3">Women's Health & Preventive Screenings</p>
+                                <p class="text-neutralMuted text-sm leading-relaxed mb-4">
+                                    Sarah specializes in prenatal consultations, cervical cancer screenings, and adolescent routine care. She previously served with the Augusta Free Clinic and brings a warm, empathetic listener approach to community medicine.
+                                </p>
+                                <div class="text-xs text-neutralMuted flex items-center gap-4">
+                                    <span><i class="fa-solid fa-check-circle text-skyClinic-600 mr-1"></i> Certified Nurse Practitioner</span>
+                                    <span><i class="fa-solid fa-heart text-rose-500 mr-1"></i> Women's Wellness</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- NP 2 -->
+                        <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col sm:flex-row">
+                            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=600" 
+                                 alt="David K. Campbell, PMHNP-BC" 
+                                 class="w-full sm:w-2/5 h-64 sm:h-auto object-cover object-top">
+                            <div class="p-6 flex-grow flex flex-col justify-center">
+                                <span class="text-skyClinic-700 font-bold text-xs uppercase tracking-wider mb-1">Psychiatric Mental Health NP</span>
+                                <h3 class="text-xl font-bold text-neutralDark">David K. Campbell, PMHNP-BC</h3>
+                                <p class="text-xs font-medium text-neutralMuted mb-3">Psychopharmacology & Mood Disorders</p>
+                                <p class="text-neutralMuted text-sm leading-relaxed mb-4">
+                                    David leads our integrated psychopharmacology consultations, helping patients manage major depression, generalized anxiety, and ADHD. He coordinates directly with our primary physicians to prevent harmful drug interactions.
+                                </p>
+                                <div class="text-xs text-neutralMuted flex items-center gap-4">
+                                    <span><i class="fa-solid fa-check-circle text-skyClinic-600 mr-1"></i> Board Certified PMHNP</span>
+                                    <span><i class="fa-solid fa-brain text-clinic-600 mr-1"></i> Integrated Psychiatry</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 3: Licensed Social Workers (2 Providers) -->
+                <div>
+                    <div class="flex items-center gap-3 mb-8 pb-3 border-b border-slate-200">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-neutralDark">Licensed Clinical Social Workers</h2>
+                            <p class="text-xs text-neutralMuted">Compassionate psychotherapy, behavioral interventions, and trauma support</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- LCSW 1 -->
+                        <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col sm:flex-row">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600" 
+                                 alt="Rachel Adams, LCSW" 
+                                 class="w-full sm:w-2/5 h-64 sm:h-auto object-cover object-top">
+                            <div class="p-6 flex-grow flex flex-col justify-center">
+                                <span class="text-emerald-700 font-bold text-xs uppercase tracking-wider mb-1">Clinical Social Work Supervisor</span>
+                                <h3 class="text-xl font-bold text-neutralDark">Rachel Adams, LCSW</h3>
+                                <p class="text-xs font-medium text-neutralMuted mb-3">Cognitive Behavioral & Trauma Therapy</p>
+                                <p class="text-neutralMuted text-sm leading-relaxed mb-4">
+                                    Rachel holds an MSW from James Madison University and has 12 years of clinical counseling experience. She facilitates individual psychotherapy for grief, chronic disease adjustment, and domestic trauma survivors.
+                                </p>
+                                <div class="text-xs text-neutralMuted flex items-center gap-3">
+                                    <span><i class="fa-solid fa-ribbon text-emerald-600 mr-1"></i> EMDR Trained</span>
+                                    <span><i class="fa-solid fa-users text-clinic-700 mr-1"></i> Adult Support Groups</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- LCSW 2 -->
+                        <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col sm:flex-row">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600" 
+                                 alt="Marcus Thorne, LCSW" 
+                                 class="w-full sm:w-2/5 h-64 sm:h-auto object-cover object-top">
+                            <div class="p-6 flex-grow flex flex-col justify-center">
+                                <span class="text-emerald-700 font-bold text-xs uppercase tracking-wider mb-1">Addiction Recovery Specialist</span>
+                                <h3 class="text-xl font-bold text-neutralDark">Marcus Thorne, LCSW</h3>
+                                <p class="text-xs font-medium text-neutralMuted mb-3">Substance Use Counseling & Family Systems</p>
+                                <p class="text-neutralMuted text-sm leading-relaxed mb-4">
+                                    Marcus specializes in harm-reduction strategies, relapse prevention, and adolescent behavioral counseling. He coordinates with regional peer-recovery groups and local Staunton community diversion programs.
+                                </p>
+                                <div class="text-xs text-neutralMuted flex items-center gap-3">
+                                    <span><i class="fa-solid fa-hands-holding text-emerald-600 mr-1"></i> Harm Reduction</span>
+                                    <span><i class="fa-solid fa-house-user text-clinic-700 mr-1"></i> Family Counseling</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 4: Community Outreach Officers (2 Advocates) -->
+                <div>
+                    <div class="flex items-center gap-3 mb-8 pb-3 border-b border-slate-200">
+                        <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-bullhorn"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-neutralDark">Community Outreach Officers</h2>
+                            <p class="text-xs text-neutralMuted">Grassroots health education, benefit enrollment, and rural patient navigation</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Outreach 1 -->
+                        <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col sm:flex-row">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=600" 
+                                 alt="Elena Rostova, MPH" 
+                                 class="w-full sm:w-2/5 h-64 sm:h-auto object-cover object-top">
+                            <div class="p-6 flex-grow flex flex-col justify-center">
+                                <span class="text-amber-700 font-bold text-xs uppercase tracking-wider mb-1">Director of Community Health</span>
+                                <h3 class="text-xl font-bold text-neutralDark">Elena Rostova, MPH</h3>
+                                <p class="text-xs font-medium text-neutralMuted mb-3">Public Health & Mobile Clinic Strategy</p>
+                                <p class="text-neutralMuted text-sm leading-relaxed mb-4">
+                                    Elena leads the clinic's mobile outreach vehicle, deploying blood pressure and glucose screenings to rural areas throughout Augusta County. She manages our health equity grant initiatives and community partnerships.
+                                </p>
+                                <div class="text-xs text-neutralMuted flex items-center gap-3">
+                                    <span><i class="fa-solid fa-van-shuttle text-amber-600 mr-1"></i> Mobile Clinic Lead</span>
+                                    <span><i class="fa-solid fa-chart-line text-clinic-700 mr-1"></i> Public Health (MPH)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Outreach 2 -->
+                        <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col sm:flex-row">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=600" 
+                                 alt="Kenneth Washington, BSW, CHW" 
+                                 class="w-full sm:w-2/5 h-64 sm:h-auto object-cover object-top">
+                            <div class="p-6 flex-grow flex flex-col justify-center">
+                                <span class="text-amber-700 font-bold text-xs uppercase tracking-wider mb-1">Senior Patient Navigator</span>
+                                <h3 class="text-xl font-bold text-neutralDark">Kenneth "Kenny" Washington, BSW, CHW</h3>
+                                <p class="text-xs font-medium text-neutralMuted mb-3">Medicaid/SNAP Enrollment & Housing Liaison</p>
+                                <p class="text-neutralMuted text-sm leading-relaxed mb-4">
+                                    A lifetime Staunton resident, Kenny assists patients with Medicaid expansion enrollment, prescription discount card applications, and coordination with local food pantries and emergency housing providers.
+                                </p>
+                                <div class="text-xs text-neutralMuted flex items-center gap-3">
+                                    <span><i class="fa-solid fa-id-card text-amber-600 mr-1"></i> Certified Health Worker</span>
+                                    <span><i class="fa-solid fa-bus text-clinic-700 mr-1"></i> Transit Assistance</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- PAGE 3: SERVICES.HTML (CLINIC SERVICES)    -->
+        <!-- ========================================== -->
+        <div id="view-services" class="page-view">
+            <!-- Header Banner -->
+            <div class="bg-white border-b border-slate-100 py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+                    <span class="text-clinic-600 font-semibold text-sm tracking-wider uppercase block mb-2">Patient-Centered Medical Home</span>
+                    <h1 class="text-4xl sm:text-5xl font-extrabold text-neutralDark tracking-tight">Our Comprehensive Care Services</h1>
+                    <p class="text-neutralMuted mt-4 text-base sm:text-lg">
+                        We offer a complete continuum of primary medical care, mental health counseling, laboratory diagnostics, and patient assistance programs all under one roof in Staunton.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Detailed Services Grid -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Service 1: Primary Care -->
+                    <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col">
+                        <div class="w-14 h-14 rounded-2xl bg-clinic-100 text-clinic-700 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-user-doctor"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-neutralDark mb-3">Comprehensive Primary Care</h3>
+                        <p class="text-neutralMuted text-sm leading-relaxed mb-6 flex-grow">
+                            Annual wellness exams, well-child visits, physicals for school and work, and timely care for acute conditions such as the flu, sinus infections, bronchitis, and minor cuts.
+                        </p>
+                        <ul class="text-xs text-neutralMuted space-y-2.5 pt-4 border-t border-slate-100">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-clinic-600"></i> Routine Adult & Pediatric Checkups</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-clinic-600"></i> Adult & Childhood Immunizations</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-clinic-600"></i> On-Site Minor Wound Management</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 2: Chronic Disease -->
+                    <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col">
+                        <div class="w-14 h-14 rounded-2xl bg-rose-100 text-rose-700 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-neutralDark mb-3">Chronic Disease Management</h3>
+                        <p class="text-neutralMuted text-sm leading-relaxed mb-6 flex-grow">
+                            Specialized disease stabilization protocols to help patients monitor and treat long-term illnesses, reducing costly hospitalizations and emergency visits.
+                        </p>
+                        <ul class="text-xs text-neutralMuted space-y-2.5 pt-4 border-t border-slate-100">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-rose-600"></i> Diabetes (Type 1 & 2) A1c Monitoring</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-rose-600"></i> Hypertension & Cholesterol Control</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-rose-600"></i> Asthma & COPD Respiratory Plans</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 3: Mental Health -->
+                    <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col">
+                        <div class="w-14 h-14 rounded-2xl bg-skyClinic-100 text-skyClinic-700 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-neutralDark mb-3">Integrated Behavioral Health</h3>
+                        <p class="text-neutralMuted text-sm leading-relaxed mb-6 flex-grow">
+                            Compassionate, non-judgmental counseling and psychiatric medication consultations delivered collaboratively with your primary physician in the same clinic visit.
+                        </p>
+                        <ul class="text-xs text-neutralMuted space-y-2.5 pt-4 border-t border-slate-100">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-skyClinic-600"></i> Individual Cognitive Behavioral Therapy</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-skyClinic-600"></i> Depression & Anxiety Medication Mgmt</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-skyClinic-600"></i> Substance Use Harm Reduction & Support</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 4: 340B Pharmacy Assistance -->
+                    <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-pills"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-neutralDark mb-3">Prescription & 340B Pharmacy</h3>
+                        <p class="text-neutralMuted text-sm leading-relaxed mb-6 flex-grow">
+                            Access deeply discounted medications through our federal 340B drug pricing program partnership, ensuring no patient abandons a critical prescription due to expense.
+                        </p>
+                        <ul class="text-xs text-neutralMuted space-y-2.5 pt-4 border-t border-slate-100">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Sliding Scale Prescription Co-pays</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Free Medication Courier for Homebound</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Patient Assistance Program (PAP) Enrollment</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 5: Outreach & Mobile Clinic -->
+                    <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col">
+                        <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-van-shuttle"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-neutralDark mb-3">Rural Outreach & Mobile Unit</h3>
+                        <p class="text-neutralMuted text-sm leading-relaxed mb-6 flex-grow">
+                            Our equipped mobile medical bus visits rural Augusta County communities, churches, and community centers, providing direct health screenings and enrollment clinics.
+                        </p>
+                        <ul class="text-xs text-neutralMuted space-y-2.5 pt-4 border-t border-slate-100">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-600"></i> Free Community Health Fairs & Screenings</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-600"></i> Medicaid / SNAP Benefits Application Aid</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-600"></i> Spanish Language Interpretation Services</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 6: Telehealth -->
+                    <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col">
+                        <div class="w-14 h-14 rounded-2xl bg-purple-100 text-purple-700 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-video"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-neutralDark mb-3">Virtual Telehealth Visits</h3>
+                        <p class="text-neutralMuted text-sm leading-relaxed mb-6 flex-grow">
+                            Secure, HIPAA-compliant video and telephone visits for patients with transportation barriers, allowing consultation with clinicians from the safety of home.
+                        </p>
+                        <ul class="text-xs text-neutralMuted space-y-2.5 pt-4 border-t border-slate-100">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-600"></i> Behavioral Health Tele-Counseling</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-600"></i> Chronic Refill Evaluations</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-600"></i> Zero App Download Required</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Sliding Fee Details Banner -->
+                <div class="mt-16 bg-clinic-50 rounded-3xl p-8 sm:p-12 border border-clinic-100 flex flex-col lg:flex-row items-center justify-between gap-8">
+                    <div class="space-y-3 max-w-2xl">
+                        <span class="text-clinic-800 text-xs font-bold uppercase tracking-wider bg-clinic-200/60 px-3 py-1 rounded-full">Understanding the Fee Scale</span>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-neutralDark">Need help with healthcare costs?</h2>
+                        <p class="text-neutralMuted text-sm sm:text-base leading-relaxed">
+                            Bring proof of income (such as a recent pay stub, W-2, or social security letter) to your first appointment. Based on household size, primary care visits range from a nominal $15 fee to standard insurance copays.
+                        </p>
+                    </div>
+                    <a href="contact.html" class="nav-link bg-clinic-700 hover:bg-clinic-800 text-white font-semibold px-8 py-4 rounded-full text-center whitespace-nowrap shadow-md" data-page="contact">
+                        Review Eligibility with Kenny
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- PAGE 4: CONTACT.HTML (CONTACT & BOOKING)   -->
+        <!-- ========================================== -->
+        <div id="view-contact" class="page-view">
+            <!-- Header Banner -->
+            <div class="bg-white border-b border-slate-100 py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+                    <span class="text-clinic-600 font-semibold text-sm tracking-wider uppercase block mb-2">Connect With Blue Ridge CHC</span>
+                    <h1 class="text-4xl sm:text-5xl font-extrabold text-neutralDark tracking-tight">Location, Hours & Appointment Request</h1>
+                    <p class="text-neutralMuted mt-4 text-base sm:text-lg">
+                        We are conveniently located in downtown Staunton, Virginia. Use the form below to request an appointment, or call our care coordination desk directly.
+                    </p>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    
+                    <!-- Contact Information Column -->
+                    <div class="lg:col-span-5 space-y-8">
+                        <div>
+                            <h2 class="text-2xl font-bold text-neutralDark mb-6">Clinic Information</h2>
+                            
+                            <div class="space-y-6">
+                                <!-- Address -->
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 rounded-2xl bg-clinic-100 text-clinic-700 flex items-center justify-center text-xl flex-shrink-0">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-neutralDark text-base">Blue Ridge Health Pavilion</h3>
+                                        <p class="text-neutralMuted text-sm">412 N Augusta St<br>Staunton, VA 24401</p>
+                                        <p class="text-xs text-clinic-700 font-medium mt-1">Bus line accessible & free patient parking in rear</p>
+                                    </div>
+                                </div>
+
+                                <!-- Phone -->
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 rounded-2xl bg-clinic-100 text-clinic-700 flex items-center justify-center text-xl flex-shrink-0">
+                                        <i class="fa-solid fa-phone"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-neutralDark text-base">Telephone & Fax</h3>
+                                        <p class="text-neutralMuted text-sm">Main Office: <a href="tel:5408852300" class="text-clinic-700 font-semibold hover:underline">(540) 885-2300</a></p>
+                                        <p class="text-neutralMuted text-sm">Clinical Fax: (540) 885-2309</p>
+                                        <p class="text-xs text-neutralMuted mt-1">After-hours on-call physician reachable via main line</p>
+                                    </div>
+                                </div>
+
+                                <!-- Email -->
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 rounded-2xl bg-clinic-100 text-clinic-700 flex items-center justify-center text-xl flex-shrink-0">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-neutralDark text-base">General Inquiries</h3>
+                                        <p class="text-neutralMuted text-sm">care@blueridgechc.org</p>
+                                        <p class="text-xs text-neutralMuted mt-1">For urgent emergencies, please dial 911 immediately.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hours of Operation Card -->
+                        <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm">
+                            <h3 class="font-bold text-neutralDark text-base mb-4 flex items-center gap-2">
+                                <i class="fa-regular fa-clock text-clinic-600"></i> Clinic Operating Hours
+                            </h3>
+                            <ul class="text-xs space-y-2.5">
+                                <li class="flex justify-between py-1 border-b border-slate-50">
+                                    <span class="text-neutralMuted">Monday & Wednesday</span>
+                                    <span class="font-bold text-neutralDark">8:00 AM – 7:00 PM (Extended)</span>
+                                </li>
+                                <li class="flex justify-between py-1 border-b border-slate-50">
+                                    <span class="text-neutralMuted">Tuesday & Thursday</span>
+                                    <span class="font-bold text-neutralDark">8:00 AM – 5:00 PM</span>
+                                </li>
+                                <li class="flex justify-between py-1 border-b border-slate-50">
+                                    <span class="text-neutralMuted">Friday</span>
+                                    <span class="font-bold text-neutralDark">8:00 AM – 4:00 PM</span>
+                                </li>
+                                <li class="flex justify-between py-1 border-b border-slate-50">
+                                    <span class="text-neutralMuted">Saturday (Walk-in Acute Clinic)</span>
+                                    <span class="font-bold text-clinic-700">9:00 AM – 1:00 PM</span>
+                                </li>
+                                <li class="flex justify-between py-1">
+                                    <span class="text-neutralMuted">Sunday</span>
+                                    <span class="font-semibold text-rose-500">Closed (On-Call Provider Available)</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Appointment Request Form Column -->
+                    <div class="lg:col-span-7">
+                        <div class="bg-white p-8 sm:p-10 rounded-3xl border border-slate-100 shadow-xl">
+                            <div class="mb-8">
+                                <h2 class="text-2xl font-bold text-neutralDark">Request an Appointment</h2>
+                                <p class="text-neutralMuted text-sm mt-1">
+                                    Complete this confidential intake form. Our patient navigation coordinator will contact you by telephone within 1 business day to confirm your time.
+                                </p>
+                            </div>
+
+                            <form id="appointment-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="first_name" class="block text-xs font-bold text-neutralDark uppercase tracking-wider mb-2">First Name *</label>
+                                        <input type="text" id="first_name" required placeholder="e.g. Thomas" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-surface text-sm transition-all">
+                                    </div>
+                                    <div>
+                                        <label for="last_name" class="block text-xs font-bold text-neutralDark uppercase tracking-wider mb-2">Last Name *</label>
+                                        <input type="text" id="last_name" required placeholder="e.g. Jefferson" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-surface text-sm transition-all">
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="patient_phone" class="block text-xs font-bold text-neutralDark uppercase tracking-wider mb-2">Phone Number *</label>
+                                        <input type="tel" id="patient_phone" required placeholder="(540) 555-0149" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-surface text-sm transition-all">
+                                    </div>
+                                    <div>
+                                        <label for="patient_email" class="block text-xs font-bold text-neutralDark uppercase tracking-wider mb-2">Email Address *</label>
+                                        <input type="email" id="patient_email" required placeholder="thomas@example.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-surface text-sm transition-all">
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="service_category" class="block text-xs font-bold text-neutralDark uppercase tracking-wider mb-2">Service Needed *</label>
+                                        <select id="service_category" required class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-surface text-sm transition-all">
+                                            <option value="" disabled selected>Select a primary reason...</option>
+                                            <option value="Primary Care">Primary Medical Care / Physical</option>
+                                            <option value="Chronic Care">Diabetes or High Blood Pressure Care</option>
+                                            <option value="Mental Health">Behavioral Health / Therapy</option>
+                                            <option value="Pediatrics">Pediatric & Well-Child Visit</option>
+                                            <option value="Sliding Scale">Benefits Enrollment / Sliding Scale Intake</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="provider_pref" class="block text-xs font-bold text-neutralDark uppercase tracking-wider mb-2">Provider Preference</label>
+                                        <select id="provider_pref" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-surface text-sm transition-all">
+                                            <option value="Next Available">First Available Provider</option>
+                                            <option value="Dr. Julian Vance, MD">Dr. Julian Vance, MD (Family Med)</option>
+                                            <option value="Dr. Anita Sharma, MD">Dr. Anita Sharma, MD (Internal Med)</option>
+                                            <option value="Dr. Carlos Morales, DO">Dr. Carlos Morales, DO (Pediatrics - EN/ES)</option>
+                                            <option value="Sarah Jenkins, FNP-C">Sarah Jenkins, FNP-C (Women's Health)</option>
+                                            <option value="David Campbell, PMHNP">David K. Campbell, PMHNP (Psychiatry)</option>
+                                            <option value="Rachel Adams, LCSW">Rachel Adams, LCSW (Therapy)</option>
+                                            <option value="Kenny Washington, BSW">Kenny Washington (Patient Navigator)</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="preferred_time" class="block text-xs font-bold text-neutralDark uppercase tracking-wider mb-2">Preferred Day & Time</label>
+                                        <select id="preferred_time" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-surface text-sm transition-all">
+                                            <option value="Mornings (8am - 12pm)">Mornings (8:00 AM – 12:00 PM)</option>
+                                            <option value="Afternoons (12pm - 4pm)">Afternoons (12:00 PM – 4:00 PM)</option>
+                                            <option value="Evening (Wednesdays 5pm - 7pm)">Evening Extended (Wednesdays 5:00 PM – 7:00 PM)</option>
+                                            <option value="Saturday Morning">Saturday Morning Walk-in</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="coverage_status" class="block text-xs font-bold text-neutralDark uppercase tracking-wider mb-2">Coverage / Insurance</label>
+                                        <select id="coverage_status" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-surface text-sm transition-all">
+                                            <option value="Sliding Fee / Uninsured">Uninsured / Interested in Sliding Scale</option>
+                                            <option value="Virginia Medicaid">Virginia Medicaid (Anthem, Optima, etc.)</option>
+                                            <option value="Medicare">Medicare / Medicare Advantage</option>
+                                            <option value="Commercial Insurance">Private / Employer Insurance</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="intake_notes" class="block text-xs font-bold text-neutralDark uppercase tracking-wider mb-2">Notes or Accommodations (Optional)</label>
+                                    <textarea id="intake_notes" rows="3" placeholder="Tell us if you need Spanish interpretation, wheelchair transit assistance, or have specific medical concerns..." class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-surface text-sm transition-all resize-none"></textarea>
+                                </div>
+
+                                <button type="submit" class="w-full bg-clinic-700 hover:bg-clinic-800 text-white font-bold py-4 rounded-xl shadow-lg shadow-clinic-700/20 hover:shadow-xl transition-all flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-paper-plane text-clinic-200"></i>
+                                    <span>Submit Appointment Request</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="bg-neutralDark text-white pt-16 pb-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-slate-800">
+                
+                <!-- Col 1: Brand & Mission -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-clinic-600 text-white flex items-center justify-center text-lg shadow-md">
+                            <i class="fa-solid fa-mountain-sun"></i>
+                        </div>
+                        <div>
+                            <span class="text-lg font-bold text-white block leading-tight">Blue Ridge CHC</span>
+                            <span class="text-xs text-clinic-300">Staunton Community Health</span>
+                        </div>
+                    </div>
+                    <p class="text-neutralMuted text-xs leading-relaxed">
+                        Blue Ridge Community Health Clinic is an essential non-profit safety-net provider committed to delivering dignified, high quality primary healthcare and mental wellness for all individuals in the Central Shenandoah Valley.
+                    </p>
+                    <div class="pt-2 text-xs text-clinic-400 flex items-center gap-2">
+                        <i class="fa-solid fa-certificate"></i>
+                        <span>Sliding-Fee Discount Program FQHC Model</span>
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigation Links -->
+                <div>
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-4">Quick Navigation</h3>
+                    <ul class="space-y-2.5 text-xs text-neutralMuted">
+                        <li><a href="index.html" class="nav-link hover:text-clinic-400 transition-colors" data-page="home">Home Page</a></li>
+                        <li><a href="team.html" class="nav-link hover:text-clinic-400 transition-colors" data-page="team">Meet Our 9 Providers</a></li>
+                        <li><a href="services.html" class="nav-link hover:text-clinic-400 transition-colors" data-page="services">Clinical Services & 340B Pharmacy</a></li>
+                        <li><a href="contact.html" class="nav-link hover:text-clinic-400 transition-colors" data-page="contact">Hours, Map & Appointment Booking</a></li>
+                        <li><button onclick="openExportModal()" class="hover:text-clinic-400 transition-colors text-left font-semibold text-clinic-300">Download All 4 Files (.zip/code)</button></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Clinical Services -->
+                <div>
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-4">Core Clinical Care</h3>
+                    <ul class="space-y-2 text-xs text-neutralMuted">
+                        <li><i class="fa-solid fa-angle-right text-clinic-600 mr-1.5"></i> Family Medicine & Pediatrics</li>
+                        <li><i class="fa-solid fa-angle-right text-clinic-600 mr-1.5"></i> Chronic Disease (Diabetes & HTN)</li>
+                        <li><i class="fa-solid fa-angle-right text-clinic-600 mr-1.5"></i> Psychiatric Medication Management</li>
+                        <li><i class="fa-solid fa-angle-right text-clinic-600 mr-1.5"></i> Licensed Clinical Therapy (LCSW)</li>
+                        <li><i class="fa-solid fa-angle-right text-clinic-600 mr-1.5"></i> Mobile Health Screenings & Outreach</li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Location & Immediate Care -->
+                <div class="space-y-3">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-4">Staunton Location</h3>
+                    <p class="text-xs text-neutralMuted">
+                        <strong class="text-slate-300 block">Health Pavilion</strong>
+                        412 N Augusta St<br>Staunton, VA 24401
+                    </p>
+                    <p class="text-xs text-neutralMuted">
+                        <strong class="text-slate-300 block">Phone</strong>
+                        (540) 885-2300
+                    </p>
+                    <div class="pt-2">
+                        <span class="inline-block bg-slate-800 text-slate-300 px-3 py-1.5 rounded-lg text-[11px]">
+                            Crisis Call 988 | Emergencies Dial 911
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutralMuted">
+                <p>&copy; 2026 Blue Ridge Community Health Clinic. All rights reserved. Sample clinic demonstration.</p>
+                <div class="flex items-center gap-4">
+                    <span class="hover:text-white cursor-pointer" onclick="navigate('contact')">Privacy Practices</span>
+                    <span>•</span>
+                    <span class="hover:text-white cursor-pointer" onclick="navigate('services')">Sliding Fee Policy</span>
+                    <span>•</span>
+                    <span class="hover:text-white cursor-pointer" onclick="navigate('team')">Clinical Leadership</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL 1: Appointment Confirmation Dialog -->
+    <div id="appointment-modal" class="fixed inset-0 bg-neutralDark/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl border border-slate-100 text-center transform transition-all scale-95 duration-200" id="appointment-modal-card">
+            <div class="w-16 h-16 rounded-2xl bg-clinic-100 text-clinic-700 flex items-center justify-center text-3xl mx-auto mb-4">
+                <i class="fa-regular fa-circle-check"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-neutralDark mb-2">Request Received!</h3>
+            <p class="text-neutralMuted text-sm mb-6 leading-relaxed">
+                Thank you, <span id="modal-patient-name" class="font-bold text-neutralDark">Neighbor</span>. Our patient coordinator Kenny Washington will contact you at <span id="modal-patient-phone" class="font-semibold text-clinic-700"></span> within 24 business hours to finalize your visit time and sliding-fee documentation.
+            </p>
+            <div class="bg-surface p-4 rounded-2xl text-left text-xs space-y-2 mb-6 border border-slate-100">
+                <div class="flex justify-between">
+                    <span class="text-neutralMuted">Selected Service:</span>
+                    <span id="modal-service" class="font-semibold text-neutralDark"></span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-neutralMuted">Assigned Provider:</span>
+                    <span id="modal-provider" class="font-semibold text-neutralDark"></span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-neutralMuted">Preferred Window:</span>
+                    <span id="modal-time" class="font-semibold text-neutralDark"></span>
+                </div>
+            </div>
+            <button onclick="closeAppointmentModal()" class="w-full bg-clinic-700 hover:bg-clinic-800 text-white font-semibold py-3.5 rounded-xl transition-all shadow-md">
+                Done & Return to Site
+            </button>
+        </div>
+    </div>
+
+    <!-- MODAL 2: 4 Standalone HTML Files Exporter -->
+    <div id="export-modal" class="fixed inset-0 bg-neutralDark/75 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-4xl w-full p-6 sm:p-8 shadow-2xl border border-slate-100 max-h-[90vh] flex flex-col">
+            <div class="flex justify-between items-center pb-4 border-b border-slate-100">
+                <div>
+                    <h3 class="text-xl font-bold text-neutralDark flex items-center gap-2">
+                        <i class="fa-solid fa-file-code text-clinic-700"></i> Standalone Multi-Page HTML Exporter
+                    </h3>
+                    <p class="text-xs text-neutralMuted">Export the four individual HTML files ready for GitHub Pages or static web servers.</p>
+                </div>
+                <button onclick="closeExportModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-neutralDark flex items-center justify-center">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Tab Buttons for the 4 Files -->
+            <div class="flex flex-wrap gap-2 pt-4 pb-3">
+                <button onclick="switchExportTab('index')" id="tab-btn-index" class="export-tab-btn px-4 py-2 rounded-xl text-xs font-bold bg-clinic-700 text-white transition-colors">
+                    index.html (Home)
+                </button>
+                <button onclick="switchExportTab('team')" id="tab-btn-team" class="export-tab-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-neutralDark hover:bg-slate-200 transition-colors">
+                    team.html (Providers)
+                </button>
+                <button onclick="switchExportTab('services')" id="tab-btn-services" class="export-tab-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-neutralDark hover:bg-slate-200 transition-colors">
+                    services.html (Services)
+                </button>
+                <button onclick="switchExportTab('contact')" id="tab-btn-contact" class="export-tab-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-neutralDark hover:bg-slate-200 transition-colors">
+                    contact.html (Booking)
+                </button>
+            </div>
+
+            <!-- Code display area -->
+            <div class="relative flex-grow min-h-0 bg-slate-900 rounded-2xl overflow-hidden my-2 flex flex-col">
+                <div class="flex justify-between items-center px-4 py-2 bg-slate-800 text-slate-300 text-xs font-mono">
+                    <span id="export-filename">index.html</span>
+                    <button onclick="copyCurrentExportCode()" class="text-xs bg-slate-700 hover:bg-slate-600 text-white px-3 py-1 rounded-md transition-colors flex items-center gap-1">
+                        <i class="fa-regular fa-copy"></i> Copy Code
+                    </button>
+                </div>
+                <textarea id="export-textarea" readonly class="flex-grow p-4 font-mono text-xs text-slate-100 bg-slate-900 resize-none outline-none overflow-y-auto leading-relaxed"></textarea>
+            </div>
+
+            <div class="pt-3 flex justify-between items-center text-xs text-neutralMuted">
+                <span>Save each code snippet into a separate file in your repository.</span>
+                <button onclick="downloadCurrentFile()" class="bg-clinic-700 hover:bg-clinic-800 text-white font-semibold px-4 py-2 rounded-xl text-xs transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-download"></i> Download This File
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // State tracking
+        let currentPage = 'home';
+
+        // Page Router function
+        function navigate(pageId) {
+            currentPage = pageId;
+            const views = {
+                'home': 'view-home',
+                'team': 'view-team',
+                'services': 'view-services',
+                'contact': 'view-contact'
+            };
+
+            // Hide all views
+            Object.values(views).forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.classList.remove('active');
+            });
+
+            // Show active view
+            const activeEl = document.getElementById(views[pageId] || 'view-home');
+            if (activeEl) {
+                activeEl.classList.add('active');
+            }
+
+            // Update Navigation active states
+            document.querySelectorAll('.nav-link').forEach(link => {
+                const target = link.getAttribute('data-page');
+                if (target === pageId) {
+                    if (link.classList.contains('px-4')) {
+                        link.classList.add('text-clinic-700', 'bg-clinic-50');
+                        link.classList.remove('text-neutralMuted', 'hover:bg-slate-50');
+                    }
+                } else {
+                    if (link.classList.contains('px-4')) {
+                        link.classList.remove('text-clinic-700', 'bg-clinic-50');
+                        link.classList.add('text-neutralMuted', 'hover:bg-slate-50');
+                    }
+                }
+            });
+
+            // Update window hash and scroll to top
+            window.location.hash = pageId;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Close mobile menu if open
+            const mobileMenu = document.getElementById('mobile-nav');
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                toggleMobileMenu();
+            }
+        }
+
+        // Intercept all links targeting HTML pages
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check hash on load
+            const hash = window.location.hash.replace('#', '');
+            if (['home', 'team', 'services', 'contact'].includes(hash)) {
+                navigate(hash);
+            }
+
+            // Click listener for .nav-link
+            document.querySelectorAll('.nav-link').forEach(anchor => {
+                anchor.addEventListener('click', (e) => {
+                    const targetPage = anchor.getAttribute('data-page');
+                    if (targetPage) {
+                        e.preventDefault();
+                        navigate(targetPage);
+                    }
+                });
+            });
+
+            // Mobile menu toggle
+            const toggleBtn = document.getElementById('mobile-menu-toggle');
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', toggleMobileMenu);
+            }
+        });
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-nav');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            }
+        }
+
+        // Appointment Form Submission Handler
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const fName = document.getElementById('first_name').value;
+            const lName = document.getElementById('last_name').value;
+            const phone = document.getElementById('patient_phone').value;
+            const service = document.getElementById('service_category').value;
+            const provider = document.getElementById('provider_pref').value;
+            const time = document.getElementById('preferred_time').value;
+
+            // Populate Modal
+            document.getElementById('modal-patient-name').textContent = `${fName} ${lName}`;
+            document.getElementById('modal-patient-phone').textContent = phone;
+            document.getElementById('modal-service').textContent = service;
+            document.getElementById('modal-provider').textContent = provider;
+            document.getElementById('modal-time').textContent = time;
+
+            // Open Modal
+            const modal = document.getElementById('appointment-modal');
+            modal.classList.remove('hidden');
+
+            // Reset form
+            document.getElementById('appointment-form').reset();
+        }
+
+        function closeAppointmentModal() {
+            document.getElementById('appointment-modal').classList.add('hidden');
+        }
+
+        // Code Exporter Data Generator
+        const sharedHead = `<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Ridge Community Health Clinic | Staunton, VA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"><\\/script>
+</head>`;
+
+        function generateStandaloneFile(pageType) {
+            const pageViewId = 'view-' + pageType;
+            const viewElement = document.getElementById(pageViewId);
+            const contentHtml = viewElement ? viewElement.innerHTML : '';
+            
+            return `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Ridge Community Health Clinic | ${pageType.toUpperCase()}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"><\\/script>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col">
+    <!-- Navigation Bar -->
+    <header class="bg-white border-b border-slate-100 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-2xl bg-teal-700 text-white flex items-center justify-center font-bold">
+                    <i class="fa-solid fa-mountain-sun"></i>
+                </div>
+                <span class="text-xl font-bold">Blue Ridge CHC</span>
+            </a>
+            <nav class="hidden md:flex gap-4">
+                <a href="index.html" class="px-3 py-1.5 rounded-xl font-medium ${pageType === 'home' ? 'text-teal-700 font-bold bg-teal-50' : 'text-slate-600 hover:text-teal-700'}">Home</a>
+                <a href="team.html" class="px-3 py-1.5 rounded-xl font-medium ${pageType === 'team' ? 'text-teal-700 font-bold bg-teal-50' : 'text-slate-600 hover:text-teal-700'}">Meet the Team</a>
+                <a href="services.html" class="px-3 py-1.5 rounded-xl font-medium ${pageType === 'services' ? 'text-teal-700 font-bold bg-teal-50' : 'text-slate-600 hover:text-teal-700'}">Services</a>
+                <a href="contact.html" class="px-3 py-1.5 rounded-xl font-medium ${pageType === 'contact' ? 'text-teal-700 font-bold bg-teal-50' : 'text-slate-600 hover:text-teal-700'}">Contact</a>
+            </nav>
+            <a href="contact.html" class="bg-teal-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold">Book Appointment</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+${contentHtml}
     </main>
 
     <!-- Footer -->
     <footer class="bg-slate-900 text-white py-12 text-center text-sm border-t border-slate-800">
         <p>&copy; 2026 Blue Ridge Community Health Clinic. 412 N Augusta St, Staunton, VA 24401 | (540) 885-2300</p>
     </footer>
+</body>
+</html>`;
+        }
+
+        let currentExportKey = 'index';
+
+        function openExportModal() {
+            document.getElementById('export-modal').classList.remove('hidden');
+            switchExportTab('index');
+        }
+
+        function closeExportModal() {
+            document.getElementById('export-modal').classList.add('hidden');
+        }
+
+        function switchExportTab(key) {
+            currentExportKey = key;
+            const filenameMap = {
+                'index': 'index.html',
+                'team': 'team.html',
+                'services': 'services.html',
+                'contact': 'contact.html'
+            };
+            const pageMap = {
+                'index': 'home',
+                'team': 'team',
+                'services': 'services',
+                'contact': 'contact'
+            };
+
+            document.getElementById('export-filename').textContent = filenameMap[key];
+            document.getElementById('export-textarea').value = generateStandaloneFile(pageMap[key]);
+
+            document.querySelectorAll('.export-tab-btn').forEach(btn => {
+                btn.classList.remove('bg-clinic-700', 'text-white');
+                btn.classList.add('bg-slate-100', 'text-neutralDark');
+            });
+            const activeBtn = document.getElementById(`tab-btn-${key}`);
+            if (activeBtn) {
+                activeBtn.classList.add('bg-clinic-700', 'text-white');
+                activeBtn.classList.remove('bg-slate-100', 'text-neutralDark');
+            }
+        }
+
+        function copyCurrentExportCode() {
+            const textarea = document.getElementById('export-textarea');
+            textarea.select();
+            document.execCommand('copy');
+            const copyBtn = event.target;
+            const originalText = copyBtn.innerHTML;
+            copyBtn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+            setTimeout(() => {
+                copyBtn.innerHTML = originalText;
+            }, 2000);
+        }
+
+        function downloadCurrentFile() {
+            const filenameMap = {
+                'index': 'index.html',
+                'team': 'team.html',
+                'services': 'services.html',
+                'contact': 'contact.html'
+            };
+            const filename = filenameMap[currentExportKey];
+            const code = document.getElementById('export-textarea').value;
+            const blob = new Blob([code], { type: 'text/html' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = filename;
+            link.click();
+            URL.revokeObjectURL(link.href);
+        }
+    </script>
 </body>
 </html>
