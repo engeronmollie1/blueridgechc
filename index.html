@@ -3,82 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Newark Community Health Oasis | Compassionate Healthcare for All</title>
+    <title>Blue Ridge Community Health Clinic (BlueRidgeCHC) | Compassionate Mountain Healthcare</title>
 
-<!-- Google Fonts: Inter -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- FontAwesome 6 Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-    tailwind.config = {
-        theme: {
-            extend: {
-                fontFamily: {
-                    sans: ['Inter', 'sans-serif'],
-                },
-                colors: {
-                    brandIndigo: {
-                        50: '#eef2ff',
-                        100: '#e0e7ff',
-                        200: '#c7d2fe',
-                        300: '#a5b4fc',
-                        400: '#818cf8',
-                        500: '#6366f1',
-                        600: '#4f46e5',
-                        700: '#4338ca',
-                        800: '#3730a3',
-                        900: '#312e81',
-                        950: '#1e1b4b',
+    <!-- Tailwind CSS with Appalachian Mountain Theme (Forest Green, Pine & Ridge Sky Blue) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
                     },
-                    softBlue: {
-                        50: '#f0f9ff',
-                        100: '#e0f2fe',
-                        200: '#bae6fd',
-                        500: '#0ea5e9',
-                        600: '#0284c7',
-                        700: '#0369a1',
-                    },
-                    surface: '#f8fafc',
-                    darkSlate: '#0f172a',
-                    mutedSlate: '#64748b',
+                    colors: {
+                        brandIndigo: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a', // Lush Appalachian forest green
+                            700: '#15803d', // Deep mountain pine green
+                            800: '#166534', // Rich evergreen
+                            900: '#14532d',
+                            950: '#052e16',
+                        },
+                        softBlue: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0284c7', // Blue Ridge mountain sky
+                            600: '#0369a1',
+                            700: '#075985',
+                        },
+                        surface: '#f8fafc',
+                        darkSlate: '#0f172a',
+                        mutedSlate: '#64748b',
+                    }
                 }
             }
         }
-    }
-</script>
-<style>
-    ::-webkit-scrollbar { width: 8px; height: 8px; }
-    ::-webkit-scrollbar-track { background: #f8fafc; }
-    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
-    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-    
-    .page-view {
-        display: none;
-        opacity: 0;
-        transition: opacity 0.25s ease-in-out;
-    }
-    .page-view.active {
-        display: block;
-        opacity: 1;
-    }
-    
-    input:focus, select:focus, textarea:focus {
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
-        border-color: #4f46e5;
-    }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #f8fafc; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        
+        .page-view {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.25s ease-in-out;
+        }
+        .page-view.active {
+            display: block;
+            opacity: 1;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.2);
+            border-color: #16a34a;
+        }
 
-    body.gate-locked {
-        overflow: hidden;
-    }
-</style>
-
+        body.gate-locked {
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body class="bg-surface text-darkSlate font-sans antialiased min-h-screen flex flex-col selection:bg-brandIndigo-100 selection:text-brandIndigo-900 gate-locked">
 
@@ -87,13 +88,13 @@
     <div class="max-w-md w-full bg-white rounded-3xl p-8 sm:p-10 shadow-2xl border border-slate-100 text-center space-y-6">
         
         <div class="w-14 h-14 mx-auto rounded-2xl bg-brandIndigo-50 text-brandIndigo-600 border border-brandIndigo-100 flex items-center justify-center text-2xl shadow-sm">
-            <i class="fa-solid fa-shield-halved"></i>
+            <i class="fa-solid fa-mountain-sun"></i>
         </div>
         
         <div class="space-y-2">
             <h2 class="text-2xl font-bold text-darkSlate tracking-tight">Security Check</h2>
             <p class="text-xs sm:text-sm text-mutedSlate leading-relaxed">
-                To enter Newark Community Health Oasis, please press and hold the button below for 5 continuous seconds.
+                To enter Blue Ridge Community Health Clinic (BlueRidgeCHC), please press and hold the button below for 5 continuous seconds.
             </p>
         </div>
 
@@ -110,30 +111,36 @@
             <div class="mt-4 text-xs font-semibold h-5 flex items-center justify-center" id="verify-status">
                 <span class="text-slate-400">Ready</span>
             </div>
+            
+            <!-- Quick unlock option for previewing convenience -->
+            <button onclick="bypassVerification()" class="mt-2 text-[11px] text-brandIndigo-600 hover:text-brandIndigo-800 underline font-medium">
+                Skip verification (Direct Preview)
+            </button>
         </div>
 
         <div class="pt-2 border-t border-slate-100">
             <p class="text-[11px] text-mutedSlate font-medium">
-                Newark Community Health Oasis &bull; Accessible Healthcare
+                Blue Ridge Community Health Clinic &bull; Accessible Mountain Healthcare
             </p>
         </div>
     </div>
 </div>
 
+<!-- TOP NOTIFICATION BAR -->
 <div class="bg-darkSlate text-slate-200 text-xs py-2.5 px-4 border-b border-slate-800">
     <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
         <div class="flex items-center gap-2">
             <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-brandIndigo-900/80 text-brandIndigo-200 border border-brandIndigo-700/50">
-                <i class="fa-solid fa-heart-pulse mr-1.5 text-brandIndigo-300"></i> Care Regardless of Ability to Pay
+                <i class="fa-solid fa-mountain-sun mr-1.5 text-brandIndigo-300"></i> Care Regardless of Ability to Pay
             </span>
-            <span class="hidden md:inline text-slate-300">Newark Sliding-Fee Scale • Medicaid, NJ FamilyCare & Uninsured Patients Welcomed</span>
+            <span class="hidden md:inline text-slate-300">Blue Ridge Sliding-Fee Scale • NC Medicaid, Healthy Blue &amp; Uninsured Patients Welcomed</span>
         </div>
         <div class="flex items-center gap-4">
-            <a href="tel:9736428200" class="hover:text-white flex items-center gap-1.5 font-medium transition-colors">
-                <i class="fa-solid fa-phone text-softBlue-300"></i> (973) 642-8200
+            <a href="tel:8286924289" class="hover:text-white flex items-center gap-1.5 font-medium transition-colors">
+                <i class="fa-solid fa-phone text-softBlue-300"></i> (828) 692-4289
             </a>
             <span class="text-slate-700">|</span>
-            <span class="text-slate-300 font-medium">Hablamos Español • Falamos Português</span>
+            <span class="text-slate-300 font-medium">Hablamos Español • Rural Outreach</span>
             <span class="text-slate-700">|</span>
             <button onclick="openExportModal()" class="text-brandIndigo-300 hover:text-white flex items-center gap-1.5 font-semibold underline underline-offset-2 transition-colors">
                 <i class="fa-solid fa-hand-holding-hand"></i> Get Help
@@ -142,16 +149,17 @@
     </div>
 </div>
 
+<!-- HEADER / NAVIGATION -->
 <header class="bg-white/95 backdrop-blur-md sticky top-0 z-40 border-b border-slate-100 shadow-sm transition-all duration-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-20">
             <a href="index.html" class="nav-link flex items-center gap-3.5 group" data-page="home">
                 <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-brandIndigo-800 to-softBlue-600 text-white flex items-center justify-center shadow-md shadow-brandIndigo-700/25 group-hover:scale-105 transition-transform">
-                    <i class="fa-solid fa-hand-holding-heart text-xl"></i>
+                    <i class="fa-solid fa-mountain-sun text-xl"></i>
                 </div>
                 <div>
-                    <span class="text-xl font-extrabold tracking-tight text-darkSlate block leading-none">Newark Oasis Health</span>
-                    <span class="text-[11px] font-semibold text-mutedSlate tracking-wider uppercase">Community Medical & Wellness Center</span>
+                    <span class="text-xl font-extrabold tracking-tight text-darkSlate block leading-none">Blue Ridge CHC</span>
+                    <span class="text-[11px] font-semibold text-mutedSlate tracking-wider uppercase">Community Health &amp; Wellness Center</span>
                 </div>
             </a>
 
@@ -166,7 +174,7 @@
                     Clinic Services
                 </a>
                 <a href="contact.html" class="nav-link px-4 py-2 rounded-xl text-sm font-semibold transition-colors text-mutedSlate hover:text-brandIndigo-700 hover:bg-slate-50" data-page="contact">
-                    Contact & Hours
+                    Contact &amp; Hours
                 </a>
             </nav>
 
@@ -183,6 +191,7 @@
         </div>
     </div>
 
+    <!-- Mobile Navigation Dropdown -->
     <div id="mobile-nav" class="hidden md:hidden bg-white border-t border-slate-100 shadow-xl px-4 pt-3 pb-6 space-y-2">
         <a href="index.html" class="nav-link block px-4 py-3 rounded-xl text-base font-semibold text-brandIndigo-700 bg-brandIndigo-50" data-page="home">
             <i class="fa-solid fa-house w-6 text-brandIndigo-600"></i> Home
@@ -194,7 +203,7 @@
             <i class="fa-solid fa-stethoscope w-6 text-brandIndigo-600"></i> Clinic Services
         </a>
         <a href="contact.html" class="nav-link block px-4 py-3 rounded-xl text-base font-semibold text-mutedSlate hover:text-brandIndigo-700 hover:bg-slate-50" data-page="contact">
-            <i class="fa-solid fa-location-dot w-6 text-brandIndigo-600"></i> Contact & Hours
+            <i class="fa-solid fa-location-dot w-6 text-brandIndigo-600"></i> Contact &amp; Hours
         </a>
         <div class="pt-3">
             <a href="contact.html" class="nav-link block text-center bg-brandIndigo-600 text-white font-semibold py-3 px-4 rounded-xl shadow-md" data-page="contact">
@@ -208,6 +217,7 @@
 
     <!-- PAGE 1: INDEX.HTML (HOME) -->
     <div id="view-home" class="page-view active">
+        <!-- Hero Section -->
         <section class="relative bg-gradient-to-b from-brandIndigo-50/60 via-white to-surface py-16 lg:py-24 overflow-hidden border-b border-slate-100">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -215,13 +225,13 @@
                     <div class="lg:col-span-7 space-y-6">
                         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brandIndigo-100 text-brandIndigo-800 text-xs font-semibold uppercase tracking-wider">
                             <span class="w-2 h-2 rounded-full bg-brandIndigo-600 animate-pulse"></span>
-                            Newark, NJ • Community Health Justice
+                            Western North Carolina • Appalachian Health Equity
                         </div>
                         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-darkSlate tracking-tight leading-[1.12]">
-                            Dignified, high-quality healthcare for <span class="text-brandIndigo-600">every neighbor in Newark.</span>
+                            Dignified, high-quality healthcare for <span class="text-brandIndigo-600">every neighbor in the Blue Ridge.</span>
                         </h1>
                         <p class="text-lg sm:text-xl text-mutedSlate max-w-2xl font-normal leading-relaxed">
-                            At Newark Community Health Oasis, we believe healthcare is a fundamental human right. We provide comprehensive primary care, chronic illness management, pediatric exams, prescription assistance, and behavioral health support—no patient is ever turned away due to inability to pay.
+                            At Blue Ridge Community Health Clinic (BlueRidgeCHC), we believe healthcare is a fundamental human right. From our mountain centers and mobile clinical units, we provide comprehensive primary care, chronic illness management, pediatric exams, prescription assistance, and behavioral health support—no patient is ever turned away due to inability to pay.
                         </p>
                         
                         <div class="flex flex-col sm:flex-row gap-4 pt-2">
@@ -253,15 +263,16 @@
                         <div class="relative mx-auto max-w-md lg:max-w-none">
                             <div class="relative overflow-hidden rounded-3xl shadow-2xl border-4 border-white bg-slate-100">
                                 <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=1000" 
-                                     alt="Caring medical team consulting with patient at Newark clinic" 
-                                     class="w-full h-[470px] object-cover object-center">
+                                     alt="Caring medical team consulting with patient at Blue Ridge clinic" 
+                                     class="w-full h-[470px] object-cover object-center"
+                                     onerror="this.src='https://placehold.co/1000x470/16a34a/ffffff?text=Blue+Ridge+Community+Clinic'">
                                 <div class="absolute inset-0 bg-gradient-to-t from-darkSlate/75 via-transparent to-transparent"></div>
                                 <div class="absolute bottom-6 left-6 right-6 text-white">
                                     <div class="flex items-center gap-2 mb-1">
                                         <i class="fa-solid fa-location-dot text-softBlue-300"></i>
-                                        <span class="text-sm font-semibold">Newark Community Health Oasis</span>
+                                        <span class="text-sm font-semibold">Blue Ridge Community Health Clinic</span>
                                     </div>
-                                    <p class="text-xs text-slate-200">92 Ferry St, Newark, NJ 07105 (Ironbound / Central Newark)</p>
+                                    <p class="text-xs text-slate-200">2579 Chimney Rock Rd, Hendersonville, NC 28792 (Henderson County)</p>
                                 </div>
                             </div>
                             
@@ -281,13 +292,14 @@
             </div>
         </section>
 
+        <!-- Mission & Highlights Section -->
         <section class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
                     <span class="text-brandIndigo-600 font-semibold text-sm tracking-wider uppercase block mb-2">Our Guiding Mission</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-darkSlate tracking-tight">Healing Newark through accessible, equitable care</h2>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-darkSlate tracking-tight">Healing Western North Carolina through accessible, equitable care</h2>
                     <p class="text-mutedSlate mt-4 text-base sm:text-lg">
-                        Financial hardship should never determine whether someone receives life-saving hypertension medication, prenatal checks, or mental health counseling. We bridge the healthcare gap in Essex County.
+                        Financial hardship or rural distance should never determine whether someone receives life-saving hypertension medication, prenatal checks, or mental health counseling. We bridge the healthcare gap across Henderson, Buncombe, and surrounding mountain counties.
                     </p>
                 </div>
 
@@ -296,9 +308,9 @@
                         <div class="w-14 h-14 rounded-2xl bg-brandIndigo-100 text-brandIndigo-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-brandIndigo-600 group-hover:text-white transition-colors">
                             <i class="fa-solid fa-stethoscope"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-darkSlate mb-3">Complete Primary & Preventative Medicine</h3>
+                        <h3 class="text-xl font-bold text-darkSlate mb-3">Complete Primary &amp; Mountain Rural Medicine</h3>
                         <p class="text-mutedSlate text-sm leading-relaxed mb-4">
-                            Comprehensive annual physicals, diabetes screening and management, asthma treatment, cardiovascular checks, and immunizations for infants, youth, and adults.
+                            Comprehensive annual physicals, diabetes screening and regulation, asthma treatment, cardiovascular checks, and immunizations tailored for rural mountain workers and families.
                         </p>
                         <a href="services.html" class="nav-link text-brandIndigo-600 font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all" data-page="services">
                             View Clinical Programs <i class="fa-solid fa-arrow-right text-xs"></i>
@@ -309,9 +321,9 @@
                         <div class="w-14 h-14 rounded-2xl bg-softBlue-100 text-softBlue-700 flex items-center justify-center text-2xl mb-6 group-hover:bg-softBlue-600 group-hover:text-white transition-colors">
                             <i class="fa-solid fa-scale-balanced"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-darkSlate mb-3">Sliding-Fee Scale & Insurance Navigation</h3>
+                        <h3 class="text-xl font-bold text-darkSlate mb-3">Sliding-Fee Scale &amp; NC Medicaid Navigation</h3>
                         <p class="text-mutedSlate text-sm leading-relaxed mb-4">
-                            Our certified bilingual patient navigators assist you in enrolling in NJ FamilyCare / Medicaid, Supplemental Nutrition (SNAP), or sliding scale clinic subsidies adjusted to your household earnings.
+                            Our certified bilingual patient navigators assist you in enrolling in NC Medicaid, Healthy Blue, Food and Nutrition Services (FNS/SNAP), or sliding-scale clinic subsidies matched to household earnings.
                         </p>
                         <a href="services.html" class="nav-link text-softBlue-700 font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all" data-page="services">
                             Learn Sliding Scale Rates <i class="fa-solid fa-arrow-right text-xs"></i>
@@ -322,9 +334,9 @@
                         <div class="w-14 h-14 rounded-2xl bg-indigo-100 text-brandIndigo-800 flex items-center justify-center text-2xl mb-6 group-hover:bg-brandIndigo-800 group-hover:text-white transition-colors">
                             <i class="fa-solid fa-people-roof"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-darkSlate mb-3">Integrated Behavioral & Social Support</h3>
+                        <h3 class="text-xl font-bold text-darkSlate mb-3">Integrated Behavioral &amp; Mountain Social Support</h3>
                         <p class="text-mutedSlate text-sm leading-relaxed mb-4">
-                            Our 3 Licensed Clinical Social Workers work directly alongside doctors to help patients overcome chronic anxiety, depression, domestic instability, food insecurity, and housing displacement.
+                            Our 3 Licensed Clinical Social Workers work directly alongside doctors to help patients overcome chronic anxiety, rural isolation, depression, domestic hardship, food insecurity, and winter heating needs.
                         </p>
                         <a href="services.html" class="nav-link text-brandIndigo-600 font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all" data-page="services">
                             Discover Social Services <i class="fa-solid fa-arrow-right text-xs"></i>
@@ -334,18 +346,19 @@
             </div>
         </section>
 
+        <!-- Call to Action Banner -->
         <section class="py-16 bg-gradient-to-r from-darkSlate via-brandIndigo-950 to-brandIndigo-900 text-white relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     <div class="lg:col-span-8 space-y-4">
                         <span class="px-3.5 py-1 bg-brandIndigo-700/80 text-brandIndigo-100 rounded-full text-xs font-semibold uppercase tracking-wider inline-block">
-                            Uninsured or Underinsured in Essex County?
+                            Uninsured or Underinsured in Western North Carolina?
                         </span>
                         <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">
                             Quality medical care is ready for you today, regardless of paperwork.
                         </h2>
                         <p class="text-brandIndigo-100/90 text-base sm:text-lg max-w-2xl">
-                            We welcome immigrants, undocumented residents, working families without insurance, and individuals experiencing homelessness. Your safety and confidentiality are 100% protected.
+                            We welcome rural families, agricultural and migrant workers, self-employed craftspeople, uninsured neighbors, and individuals in recovery. Your safety and confidentiality are 100% protected.
                         </p>
                     </div>
                     <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
@@ -360,15 +373,16 @@
             </div>
         </section>
 
+        <!-- Testimonial Section -->
         <section class="py-20 bg-surface">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6">
                 <i class="fa-solid fa-quote-left text-4xl text-brandIndigo-300"></i>
                 <p class="text-xl sm:text-2xl font-medium text-darkSlate leading-relaxed italic">
-                    "When I lost my warehouse job, I couldn't afford my insulin or blood pressure prescriptions. Newark Oasis welcomed me without judgment, adjusted my visit to $10 on their sliding scale, and helped me get back on my feet."
+                    "When our family farm had a hard winter, I couldn't afford my blood pressure medication and my daughter needed her school physical. Blue Ridge CHC welcomed us with open arms, charged $10 on their sliding scale, and treated us with deep dignity."
                 </p>
                 <div class="pt-2">
-                    <div class="font-bold text-darkSlate">Mateo R.</div>
-                    <div class="text-xs text-mutedSlate">Newark Resident • Ironbound Community Member</div>
+                    <div class="font-bold text-darkSlate">Caleb M.</div>
+                    <div class="text-xs text-mutedSlate">Henderson County Resident • Blue Ridge Community Member</div>
                 </div>
             </div>
         </section>
@@ -379,15 +393,16 @@
         <div class="bg-white border-b border-slate-100 py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
                 <span class="text-brandIndigo-600 font-semibold text-sm tracking-wider uppercase block mb-2">Our Dedicated Clinical Staff</span>
-                <h1 class="text-4xl sm:text-5xl font-extrabold text-darkSlate tracking-tight">Meet Our Compassionate Care Team</h1>
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-darkSlate tracking-tight">Meet Our Compassionate Blue Ridge Care Team</h1>
                 <p class="text-mutedSlate mt-4 text-base sm:text-lg">
-                    Our multidisciplinary team brings together 3 Board-Certified Physicians, 2 Nurse Practitioners, 2 Physician Assistants, and 3 Licensed Clinical Social Workers dedicated to equitable community medicine.
+                    Our multidisciplinary team brings together 3 Board-Certified Physicians, 2 Nurse Practitioners, 2 Physician Assistants, and 3 Licensed Clinical Social Workers dedicated to equitable Appalachian community medicine.
                 </p>
             </div>
         </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
             
+            <!-- Category 1: Physicians -->
             <div>
                 <div class="flex items-center gap-3 mb-8 pb-3 border-b border-slate-200">
                     <div class="w-10 h-10 rounded-xl bg-brandIndigo-100 text-brandIndigo-700 flex items-center justify-center text-lg">
@@ -400,62 +415,69 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Physician 1 -->
                     <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col">
                         <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=700" 
-                             alt="Dr. Marcus Adebayo, MD, MPH" 
-                             class="w-full h-72 object-cover object-top">
+                             alt="Dr. Clara Vance, MD, MPH" 
+                             class="w-full h-72 object-cover object-top"
+                             onerror="this.src='https://placehold.co/700x500/16a34a/ffffff?text=Dr.+Clara+Vance'">
                         <div class="p-6 flex-grow flex flex-col">
-                            <span class="text-brandIndigo-600 font-bold text-xs uppercase tracking-wider mb-1">Chief Medical Officer & Family Medicine</span>
-                            <h3 class="text-xl font-bold text-darkSlate">Dr. Marcus Adebayo, MD, MPH</h3>
-                            <p class="text-xs font-medium text-mutedSlate mb-3">Rutgers New Jersey Medical School</p>
+                            <span class="text-brandIndigo-600 font-bold text-xs uppercase tracking-wider mb-1">Chief Medical Officer &amp; Family Medicine</span>
+                            <h3 class="text-xl font-bold text-darkSlate">Dr. Clara Vance, MD, MPH</h3>
+                            <p class="text-xs font-medium text-mutedSlate mb-3">UNC School of Medicine</p>
                             <p class="text-mutedSlate text-sm leading-relaxed flex-grow">
-                                Born and raised in Essex County, Dr. Adebayo dedicated his 18-year career to urban community medicine. He leads our clinical operations, chronic diabetes initiative, and cardiovascular preventative clinics with deep humility and cultural competence.
+                                Raised in Western North Carolina, Dr. Vance has spent 17 years dedicated to rural mountain healthcare. She leads our clinical operations, mobile Appalachian outreach van, and chronic diabetes initiatives with deep empathy and regional insight.
                             </p>
                             <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-mutedSlate">
                                 <span><i class="fa-solid fa-award text-brandIndigo-600 mr-1"></i> AAFP Board Certified</span>
-                                <span class="font-medium text-brandIndigo-700">English, Yoruba</span>
+                                <span class="font-medium text-brandIndigo-700">English, Spanish</span>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Physician 2 -->
                     <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col">
                         <img src="https://images.unsplash.com/photo-1594824813501-4838e2fae45f?auto=format&fit=crop&q=80&w=700" 
-                             alt="Dr. Sofia Santos-Cruz, MD" 
-                             class="w-full h-72 object-cover object-top">
+                             alt="Dr. Mateo Morales, MD" 
+                             class="w-full h-72 object-cover object-top"
+                             onerror="this.src='https://placehold.co/700x500/16a34a/ffffff?text=Dr.+Mateo+Morales'">
                         <div class="p-6 flex-grow flex flex-col">
-                            <span class="text-brandIndigo-600 font-bold text-xs uppercase tracking-wider mb-1">Director of Women's Health & Internal Medicine</span>
-                            <h3 class="text-xl font-bold text-darkSlate">Dr. Sofia Santos-Cruz, MD</h3>
-                            <p class="text-xs font-medium text-mutedSlate mb-3">NYU Grossman School of Medicine</p>
+                            <span class="text-brandIndigo-600 font-bold text-xs uppercase tracking-wider mb-1">Director of Internal Medicine &amp; Rural Health</span>
+                            <h3 class="text-xl font-bold text-darkSlate">Dr. Mateo Morales, MD</h3>
+                            <p class="text-xs font-medium text-mutedSlate mb-3">Duke University School of Medicine</p>
                             <p class="text-mutedSlate text-sm leading-relaxed flex-grow">
-                                Dr. Santos-Cruz oversees our comprehensive prenatal care, reproductive counseling, and adult chronic disease management. She champions low-cost cervical and breast cancer screenings for immigrant women throughout greater Newark.
+                                Dr. Morales oversees chronic adult illness management, prenatal coordination, and cardiovascular screenings. He champions preventative medicine and accessible care for agricultural workers across Henderson and Polk counties.
                             </p>
                             <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-mutedSlate">
                                 <span><i class="fa-solid fa-award text-brandIndigo-600 mr-1"></i> ABIM Board Certified</span>
-                                <span class="font-medium text-brandIndigo-700">English, Spanish, Portuguese</span>
+                                <span class="font-medium text-brandIndigo-700">English, Spanish</span>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Physician 3 -->
                     <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col">
                         <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=700" 
-                             alt="Dr. Tariq Al-Mansoor, DO" 
-                             class="w-full h-72 object-cover object-top">
+                             alt="Dr. Hannah Holcomb, DO" 
+                             class="w-full h-72 object-cover object-top"
+                             onerror="this.src='https://placehold.co/700x500/16a34a/ffffff?text=Dr.+Hannah+Holcomb'">
                         <div class="p-6 flex-grow flex flex-col">
-                            <span class="text-brandIndigo-600 font-bold text-xs uppercase tracking-wider mb-1">Pediatrician & Community Wellness</span>
-                            <h3 class="text-xl font-bold text-darkSlate">Dr. Tariq Al-Mansoor, DO</h3>
-                            <p class="text-xs font-medium text-mutedSlate mb-3">Rowan-Virtua School of Osteopathic Medicine</p>
+                            <span class="text-brandIndigo-600 font-bold text-xs uppercase tracking-wider mb-1">Pediatrician &amp; Adolescent Health</span>
+                            <h3 class="text-xl font-bold text-darkSlate">Dr. Hannah Holcomb, DO</h3>
+                            <p class="text-xs font-medium text-mutedSlate mb-3">ETSU Quillen College of Medicine</p>
                             <p class="text-mutedSlate text-sm leading-relaxed flex-grow">
-                                Dr. Al-Mansoor brings gentle osteopathic care to Newark's pediatric population. He specializes in childhood asthma management, developmental screening milestones, nutritional guidance, and school-required immunizations.
+                                Dr. Holcomb brings gentle osteopathic care to children and teens throughout the Blue Ridge. She specializes in childhood asthma, developmental milestone evaluations, nutritional wellness, and school-required immunizations.
                             </p>
                             <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-mutedSlate">
                                 <span><i class="fa-solid fa-award text-brandIndigo-600 mr-1"></i> AAP Board Certified</span>
-                                <span class="font-medium text-brandIndigo-700">English, Arabic</span>
+                                <span class="font-medium text-brandIndigo-700">English</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Category 2: Nurse Practitioners -->
             <div>
                 <div class="flex items-center gap-3 mb-8 pb-3 border-b border-slate-200">
                     <div class="w-10 h-10 rounded-xl bg-softBlue-100 text-softBlue-700 flex items-center justify-center text-lg">
@@ -468,44 +490,49 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- NP 1 -->
                     <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col sm:flex-row">
                         <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=600" 
-                             alt="Kendra Washington, APRN, FNP-BC" 
-                             class="w-full sm:w-2/5 h-64 sm:h-auto object-cover object-top">
+                             alt="Ethan Caldwell, APRN, FNP-C" 
+                             class="w-full sm:w-2/5 h-64 sm:h-auto object-cover object-top"
+                             onerror="this.src='https://placehold.co/600x600/0284c7/ffffff?text=Ethan+Caldwell'">
                         <div class="p-6 flex-grow flex flex-col justify-center">
                             <span class="text-softBlue-700 font-bold text-xs uppercase tracking-wider mb-1">Family Nurse Practitioner</span>
-                            <h3 class="text-xl font-bold text-darkSlate">Kendra Washington, APRN, FNP-BC</h3>
-                            <p class="text-xs font-medium text-mutedSlate mb-3">Columbia University School of Nursing</p>
+                            <h3 class="text-xl font-bold text-darkSlate">Ethan Caldwell, APRN, FNP-C</h3>
+                            <p class="text-xs font-medium text-mutedSlate mb-3">Western Carolina University School of Nursing</p>
                             <p class="text-mutedSlate text-sm leading-relaxed mb-4">
-                                Kendra specializes in managing adult hypertension, high cholesterol, and minor acute illnesses. She organizes our walk-in weekend urgent sick visits and coordinates our mobile health screening van in Newark's Central Ward.
+                                Ethan specializes in adult hypertension, cholesterol regulation, and acute illnesses. He coordinates our mobile screening van in rural communities and leads our weekend mountain walk-in clinic.
                             </p>
                             <div class="text-xs text-mutedSlate flex items-center gap-4">
-                                <span><i class="fa-solid fa-check-circle text-softBlue-600 mr-1"></i> ANCC Certified</span>
-                                <span><i class="fa-solid fa-heart text-brandIndigo-600 mr-1"></i> Hypertension Clinic Lead</span>
+                                <span><i class="fa-solid fa-check-circle text-softBlue-600 mr-1"></i> AANP Certified</span>
+                                <span><i class="fa-solid fa-heart text-brandIndigo-600 mr-1"></i> Rural Health Lead</span>
                             </div>
                         </div>
                     </div>
 
+                    <!-- NP 2 -->
                     <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col sm:flex-row">
                         <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=600" 
-                             alt="Luis Hernandez, APRN, AGPCNP-BC" 
-                             class="w-full sm:w-2/5 h-64 sm:h-auto object-cover object-top">
+                             alt="Sarah Jenkins-Owens, APRN, AGPCNP-BC" 
+                             class="w-full sm:w-2/5 h-64 sm:h-auto object-cover object-top"
+                             onerror="this.src='https://placehold.co/600x600/0284c7/ffffff?text=Sarah+Jenkins-Owens'">
                         <div class="p-6 flex-grow flex flex-col justify-center">
                             <span class="text-softBlue-700 font-bold text-xs uppercase tracking-wider mb-1">Adult-Gerontology NP</span>
-                            <h3 class="text-xl font-bold text-darkSlate">Luis Hernandez, APRN, AGPCNP-BC</h3>
-                            <p class="text-xs font-medium text-mutedSlate mb-3">Seton Hall University College of Nursing</p>
+                            <h3 class="text-xl font-bold text-darkSlate">Sarah Jenkins-Owens, APRN, AGPCNP-BC</h3>
+                            <p class="text-xs font-medium text-mutedSlate mb-3">UVA School of Nursing</p>
                             <p class="text-mutedSlate text-sm leading-relaxed mb-4">
-                                Luis provides dedicated primary and geriatric care for Newark seniors, often managing polypharmacy and mobility limitations. He is fully bilingual and leads our geriatric medication safety workshops.
+                                Sarah provides dedicated primary and geriatric care for mountain elders, focusing on mobility limitations, polypharmacy safety, and coordinating homebound senior checkups across the ridges.
                             </p>
                             <div class="text-xs text-mutedSlate flex items-center gap-4">
-                                <span><i class="fa-solid fa-check-circle text-softBlue-600 mr-1"></i> AANP Board Certified</span>
-                                <span><i class="fa-solid fa-language text-brandIndigo-600 mr-1"></i> Fluent Spanish</span>
+                                <span><i class="fa-solid fa-check-circle text-softBlue-600 mr-1"></i> ANCC Certified</span>
+                                <span><i class="fa-solid fa-house-medical text-brandIndigo-600 mr-1"></i> Geriatric Specialist</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Category 3: Physician Assistants -->
             <div>
                 <div class="flex items-center gap-3 mb-8 pb-3 border-b border-slate-200">
                     <div class="w-10 h-10 rounded-xl bg-brandIndigo-100 text-brandIndigo-800 flex items-center justify-center text-lg">
@@ -518,16 +545,18 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- PA 1 -->
                     <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col sm:flex-row">
                         <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600" 
-                             alt="Amara Chen-O'Reilly, PA-C" 
-                             class="w-full sm:w-2/5 h-64 sm:h-auto object-cover object-top">
+                             alt="Rachel Lin-McAllister, PA-C" 
+                             class="w-full sm:w-2/5 h-64 sm:h-auto object-cover object-top"
+                             onerror="this.src='https://placehold.co/600x600/15803d/ffffff?text=Rachel+Lin-McAllister'">
                         <div class="p-6 flex-grow flex flex-col justify-center">
                             <span class="text-brandIndigo-600 font-bold text-xs uppercase tracking-wider mb-1">Lead Urgent Care PA</span>
-                            <h3 class="text-xl font-bold text-darkSlate">Amara Chen-O'Reilly, PA-C</h3>
-                            <p class="text-xs font-medium text-mutedSlate mb-3">Rutgers PA Program</p>
+                            <h3 class="text-xl font-bold text-darkSlate">Rachel Lin-McAllister, PA-C</h3>
+                            <p class="text-xs font-medium text-mutedSlate mb-3">Wake Forest School of Medicine PA Program</p>
                             <p class="text-mutedSlate text-sm leading-relaxed mb-4">
-                                Amara evaluates walk-in acute conditions including respiratory infections, sprains, minor laceration suturing, skin abscesses, and point-of-care lab diagnostics. Her rapid compassionate triage keeps patients out of overcrowded emergency rooms.
+                                Rachel evaluates walk-in acute conditions including respiratory infections, sprains, minor laceration suturing, outdoor injuries, and rapid point-of-care testing to keep mountain families out of crowded regional hospitals.
                             </p>
                             <div class="text-xs text-mutedSlate flex items-center gap-3">
                                 <span><i class="fa-solid fa-certificate text-brandIndigo-600 mr-1"></i> NCCPA Certified</span>
@@ -536,16 +565,18 @@
                         </div>
                     </div>
 
+                    <!-- PA 2 -->
                     <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col sm:flex-row">
                         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600" 
-                             alt="Darius Jenkins, PA-C" 
-                             class="w-full sm:w-2/5 h-64 sm:h-auto object-cover object-top">
+                             alt="David Boone, PA-C" 
+                             class="w-full sm:w-2/5 h-64 sm:h-auto object-cover object-top"
+                             onerror="this.src='https://placehold.co/600x600/15803d/ffffff?text=David+Boone'">
                         <div class="p-6 flex-grow flex flex-col justify-center">
                             <span class="text-brandIndigo-600 font-bold text-xs uppercase tracking-wider mb-1">Preventative Medicine PA</span>
-                            <h3 class="text-xl font-bold text-darkSlate">Darius Jenkins, PA-C</h3>
-                            <p class="text-xs font-medium text-mutedSlate mb-3">Pace University-Lenox Hill PA Program</p>
+                            <h3 class="text-xl font-bold text-darkSlate">David Boone, PA-C</h3>
+                            <p class="text-xs font-medium text-mutedSlate mb-3">Wingate University PA Program</p>
                             <p class="text-mutedSlate text-sm leading-relaxed mb-4">
-                                Darius coordinates routine blood panels, diabetic foot screenings, asthma action plans, and vaccine catch-up schedules for uninsured young adults and workers across Newark's industrial corridors.
+                                David coordinates routine lab panels, diabetic wellness plans, asthma management, and adult vaccine catch-up schedules for uninsured workers and tradespeople across the Blue Ridge corridor.
                             </p>
                             <div class="text-xs text-mutedSlate flex items-center gap-3">
                                 <span><i class="fa-solid fa-certificate text-brandIndigo-600 mr-1"></i> NCCPA Certified</span>
@@ -556,6 +587,7 @@
                 </div>
             </div>
 
+            <!-- Category 4: Social Workers -->
             <div>
                 <div class="flex items-center gap-3 mb-8 pb-3 border-b border-slate-200">
                     <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-lg">
@@ -568,56 +600,62 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- SW 1 -->
                     <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col">
                         <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=600" 
-                             alt="Yolanda Baptiste, LCSW" 
-                             class="w-full h-72 object-cover object-top">
+                             alt="Brenda Odom, LCSW" 
+                             class="w-full h-72 object-cover object-top"
+                             onerror="this.src='https://placehold.co/600x600/059669/ffffff?text=Brenda+Odom'">
                         <div class="p-6 flex-grow flex flex-col">
                             <span class="text-emerald-700 font-bold text-xs uppercase tracking-wider mb-1">Director of Behavioral Health</span>
-                            <h3 class="text-xl font-bold text-darkSlate">Yolanda Baptiste, LCSW</h3>
-                            <p class="text-xs font-medium text-mutedSlate mb-3">Rutgers School of Social Work</p>
+                            <h3 class="text-xl font-bold text-darkSlate">Brenda Odom, LCSW</h3>
+                            <p class="text-xs font-medium text-mutedSlate mb-3">Appalachian State University Social Work</p>
                             <p class="text-mutedSlate text-sm leading-relaxed flex-grow">
-                                Yolanda brings 16 years of trauma-informed behavioral care to our clinic. She provides individual therapy for patients coping with depression, anxiety, grief, and community trauma, while facilitating weekly bilingual support circles.
+                                Brenda brings 15 years of trauma-informed behavioral healthcare to our clinic. She provides individual therapy for depression, grief, anxiety, and rural isolation, while facilitating weekly community support circles.
                             </p>
                             <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-mutedSlate">
-                                <span><i class="fa-solid fa-brain text-emerald-600 mr-1"></i> Trauma & CBT</span>
-                                <span class="font-medium text-emerald-700">English, Haitian Creole</span>
+                                <span><i class="fa-solid fa-brain text-emerald-600 mr-1"></i> Trauma &amp; CBT</span>
+                                <span class="font-medium text-emerald-700">English</span>
                             </div>
                         </div>
                     </div>
 
+                    <!-- SW 2 -->
                     <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col">
                         <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=600" 
-                             alt="Mateo Silva, LCSW, LCADC" 
-                             class="w-full h-72 object-cover object-top">
+                             alt="Lucas Rivera, LCSW, LCAS" 
+                             class="w-full h-72 object-cover object-top"
+                             onerror="this.src='https://placehold.co/600x600/059669/ffffff?text=Lucas+Rivera'">
                         <div class="p-6 flex-grow flex flex-col">
-                            <span class="text-emerald-700 font-bold text-xs uppercase tracking-wider mb-1">Addiction & Harm Reduction Specialist</span>
-                            <h3 class="text-xl font-bold text-darkSlate">Mateo Silva, LCSW, LCADC</h3>
-                            <p class="text-xs font-medium text-mutedSlate mb-3">Fordham University Graduate School of Social Service</p>
+                            <span class="text-emerald-700 font-bold text-xs uppercase tracking-wider mb-1">Addiction &amp; Harm Reduction Specialist</span>
+                            <h3 class="text-xl font-bold text-darkSlate">Lucas Rivera, LCSW, LCAS</h3>
+                            <p class="text-xs font-medium text-mutedSlate mb-3">UNC Chapel Hill School of Social Work</p>
                             <p class="text-mutedSlate text-sm leading-relaxed flex-grow">
-                                Mateo directs our harm-reduction and substance use recovery programs. He provides compassionate counseling, connects patients to medication-assisted treatment (MAT), and distributes life-saving Naloxone (Narcan) kits with training.
+                                Lucas directs our harm-reduction and substance use recovery programs. He provides compassionate counseling, connects patients to medication-assisted treatment (MAT), and distributes free Naloxone (Narcan) kits with training across rural hollers.
                             </p>
                             <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-mutedSlate">
-                                <span><i class="fa-solid fa-shield-heart text-emerald-600 mr-1"></i> MAT & Harm Reduction</span>
-                                <span class="font-medium text-emerald-700">English, Portuguese, Spanish</span>
+                                <span><i class="fa-solid fa-shield-heart text-emerald-600 mr-1"></i> MAT &amp; Harm Reduction</span>
+                                <span class="font-medium text-emerald-700">English, Spanish</span>
                             </div>
                         </div>
                     </div>
 
+                    <!-- SW 3 -->
                     <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col">
                         <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=600" 
-                             alt="Fatima Ndiaye, MSW, LSW" 
-                             class="w-full h-72 object-cover object-top">
+                             alt="Maya Abernathy, MSW, LCSW-A" 
+                             class="w-full h-72 object-cover object-top"
+                             onerror="this.src='https://placehold.co/600x600/059669/ffffff?text=Maya+Abernathy'">
                         <div class="p-6 flex-grow flex flex-col">
-                            <span class="text-emerald-700 font-bold text-xs uppercase tracking-wider mb-1">Community Resource & Housing Navigator</span>
-                            <h3 class="text-xl font-bold text-darkSlate">Fatima Ndiaye, MSW, LSW</h3>
-                            <p class="text-xs font-medium text-mutedSlate mb-3">Monmouth University School of Social Work</p>
+                            <span class="text-emerald-700 font-bold text-xs uppercase tracking-wider mb-1">Community Resource &amp; Rural Navigator</span>
+                            <h3 class="text-xl font-bold text-darkSlate">Maya Abernathy, MSW, LCSW-A</h3>
+                            <p class="text-xs font-medium text-mutedSlate mb-3">East Tennessee State University</p>
                             <p class="text-mutedSlate text-sm leading-relaxed flex-grow">
-                                Fatima addresses the social determinants of health. She guides patients through emergency housing subsidies, food pantry vouchers, utility assistance grants, domestic safety advocacy, and legal aid clinics in Newark.
+                                Maya addresses the social determinants of health across Western NC. She connects patients to emergency heating subsidies, food pantry deliveries, rural transit vouchers, domestic safety resources, and NC Medicaid enrollment.
                             </p>
                             <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-mutedSlate">
                                 <span><i class="fa-solid fa-house-chimney text-emerald-600 mr-1"></i> Social Determinants</span>
-                                <span class="font-medium text-emerald-700">English, French, Wolof</span>
+                                <span class="font-medium text-emerald-700">English</span>
                             </div>
                         </div>
                     </div>
@@ -632,9 +670,9 @@
         <div class="bg-white border-b border-slate-100 py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
                 <span class="text-brandIndigo-600 font-semibold text-sm tracking-wider uppercase block mb-2">Equitable Community Care</span>
-                <h1 class="text-4xl sm:text-5xl font-extrabold text-darkSlate tracking-tight">Comprehensive Clinic Services</h1>
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-darkSlate tracking-tight">Comprehensive Mountain Clinic Services</h1>
                 <p class="text-mutedSlate mt-4 text-base sm:text-lg">
-                    We deliver an integrated spectrum of clinical and social services designed to heal the whole person, reduce unnecessary emergency room visits, and uplift families across Newark.
+                    We deliver an integrated spectrum of clinical and social services designed to heal the whole person, reduce unnecessary emergency visits, and uplift families across the Blue Ridge.
                 </p>
             </div>
         </div>
@@ -642,51 +680,55 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
+                <!-- Service 1 -->
                 <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col">
                     <div class="w-14 h-14 rounded-2xl bg-brandIndigo-100 text-brandIndigo-600 flex items-center justify-center text-2xl mb-6">
                         <i class="fa-solid fa-stethoscope"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-darkSlate mb-3">Adult Primary & Chronic Disease Care</h3>
+                    <h3 class="text-xl font-bold text-darkSlate mb-3">Adult Primary &amp; Mountain Rural Health Care</h3>
                     <p class="text-mutedSlate text-sm leading-relaxed mb-6 flex-grow">
-                        Comprehensive check-ups, continuous diabetes monitoring (A1C testing, glucometers), hypertension regulation, asthma management, and preventative cardiology for working-class adults.
+                        Comprehensive check-ups, continuous diabetes management (A1C testing, glucometers), hypertension regulation, asthma management, and preventative cardiology for working-class adults.
                     </p>
                     <ul class="text-xs text-mutedSlate space-y-2.5 pt-4 border-t border-slate-100">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandIndigo-600"></i> Routine Physicals & Lab Work</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandIndigo-600"></i> Free Glucose & Cholesterol Screenings</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandIndigo-600"></i> Routine Physicals &amp; Lab Work</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandIndigo-600"></i> Free Glucose &amp; Cholesterol Screenings</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandIndigo-600"></i> Personalized Health Education Plans</li>
                     </ul>
                 </div>
 
+                <!-- Service 2 -->
                 <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col">
                     <div class="w-14 h-14 rounded-2xl bg-softBlue-100 text-softBlue-700 flex items-center justify-center text-2xl mb-6">
                         <i class="fa-solid fa-baby"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-darkSlate mb-3">Community Pediatrics & Well-Child Checks</h3>
+                    <h3 class="text-xl font-bold text-darkSlate mb-3">Blue Ridge Pediatrics &amp; Well-Child Checks</h3>
                     <p class="text-mutedSlate text-sm leading-relaxed mb-6 flex-grow">
-                        Gentle, nurturing care for newborns, toddlers, and school-age children. We ensure Newark children stay healthy, hit developmental milestones, and attend school fully protected.
+                        Gentle, nurturing care for newborns, toddlers, and school-age children. We ensure Appalachian children stay healthy, hit developmental milestones, and attend school fully protected.
                     </p>
                     <ul class="text-xs text-mutedSlate space-y-2.5 pt-4 border-t border-slate-100">
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-softBlue-600"></i> Vaccines for Children (VFC Program at $0)</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-softBlue-600"></i> School & Sports Physical Documentation</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-softBlue-600"></i> Pediatric Lead & Anemia Testing</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-softBlue-600"></i> School &amp; Sports Physical Documentation</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-softBlue-600"></i> Pediatric Vision &amp; Hearing Screenings</li>
                     </ul>
                 </div>
 
+                <!-- Service 3 -->
                 <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col">
                     <div class="w-14 h-14 rounded-2xl bg-rose-100 text-rose-700 flex items-center justify-center text-2xl mb-6">
                         <i class="fa-solid fa-person-pregnant"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-darkSlate mb-3">Women's Health & Prenatal Support</h3>
+                    <h3 class="text-xl font-bold text-darkSlate mb-3">Women's Health &amp; Prenatal Support</h3>
                     <p class="text-mutedSlate text-sm leading-relaxed mb-6 flex-grow">
                         Compassionate reproductive health, prenatal checkups, post-partum maternal wellness, cervical Pap smears, breast health evaluations, and confidential family planning guidance.
                     </p>
                     <ul class="text-xs text-mutedSlate space-y-2.5 pt-4 border-t border-slate-100">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-rose-600"></i> Prenatal Ultrasound & Lab Coordination</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-rose-600"></i> Contraception Counseling & Education</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-rose-600"></i> Prenatal Ultrasound &amp; Lab Coordination</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-rose-600"></i> Contraception Counseling &amp; Education</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-rose-600"></i> Low-Cost Cancer Screenings</li>
                     </ul>
                 </div>
 
+                <!-- Service 4 -->
                 <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col">
                     <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-2xl mb-6">
                         <i class="fa-solid fa-prescription-bottle-medical"></i>
@@ -697,46 +739,49 @@
                     </p>
                     <ul class="text-xs text-mutedSlate space-y-2.5 pt-4 border-t border-slate-100">
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-600"></i> $4 to $10 Common Prescriptions</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-600"></i> Direct Newark Partner Pharmacy Delivery</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-600"></i> Direct Mountain Partner Pharmacy Delivery</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-600"></i> Medication Therapy Management by Pharmacists</li>
                     </ul>
                 </div>
 
+                <!-- Service 5 -->
                 <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col">
                     <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-2xl mb-6">
                         <i class="fa-solid fa-brain"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-darkSlate mb-3">Mental Health Counseling & Addiction Support</h3>
+                    <h3 class="text-xl font-bold text-darkSlate mb-3">Mental Health Counseling &amp; Addiction Support</h3>
                     <p class="text-mutedSlate text-sm leading-relaxed mb-6 flex-grow">
                         Trauma-informed behavioral therapy led by our 3 Licensed Social Workers. We help individuals and families overcome stress, depression, anxiety, grief, and substance dependence with empathy.
                     </p>
                     <ul class="text-xs text-mutedSlate space-y-2.5 pt-4 border-t border-slate-100">
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> 1-on-1 Confidential Psychotherapy</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Medication-Assisted Treatment (MAT) Support</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Free Narcan Kits & Community Overdose Training</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Free Narcan Kits &amp; Community Overdose Training</li>
                     </ul>
                 </div>
 
+                <!-- Service 6 -->
                 <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col">
                     <div class="w-14 h-14 rounded-2xl bg-indigo-100 text-brandIndigo-800 flex items-center justify-center text-2xl mb-6">
                         <i class="fa-solid fa-hand-holding-dollar"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-darkSlate mb-3">Food, Housing & Medicaid Enrollment</h3>
+                    <h3 class="text-xl font-bold text-darkSlate mb-3">Food, Heating &amp; NC Medicaid Enrollment</h3>
                     <p class="text-mutedSlate text-sm leading-relaxed mb-6 flex-grow">
-                        Medical care cannot succeed on an empty stomach or in unstable housing. Our navigators enroll eligible families in NJ FamilyCare, SNAP food stamps, utility grants, and emergency housing vouchers.
+                        Medical care cannot succeed without adequate food or winter heat. Our navigators enroll eligible mountain families in NC Medicaid, SNAP food stamps, and emergency winter energy assistance.
                     </p>
                     <ul class="text-xs text-mutedSlate space-y-2.5 pt-4 border-t border-slate-100">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandIndigo-600"></i> On-Site NJ FamilyCare / Medicaid Application Help</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandIndigo-600"></i> Weekly Emergency Food Pantry Referrals</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandIndigo-600"></i> Eviction Prevention & Legal Aid Liaisons</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandIndigo-600"></i> On-Site NC Medicaid Application Assistance</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandIndigo-600"></i> Emergency Winter Heating Grants &amp; Woodbank Referrals</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandIndigo-600"></i> Rural Transit Vouchers &amp; Food Box Coordination</li>
                     </ul>
                 </div>
 
             </div>
 
+            <!-- Sliding Fee Scale Table -->
             <div class="mt-16 bg-white rounded-3xl p-8 sm:p-12 border border-slate-100 shadow-sm">
                 <div class="max-w-3xl mb-8">
-                    <span class="text-brandIndigo-600 text-xs font-bold uppercase tracking-wider bg-brandIndigo-100 px-3 py-1 rounded-full">Fair & Transparent Pricing</span>
+                    <span class="text-brandIndigo-600 text-xs font-bold uppercase tracking-wider bg-brandIndigo-100 px-3 py-1 rounded-full">Fair &amp; Transparent Pricing</span>
                     <h2 class="text-2xl sm:text-3xl font-bold text-darkSlate mt-3">How Our Sliding-Fee Scale Works</h2>
                     <p class="text-mutedSlate text-sm sm:text-base mt-2">
                         Discounts are determined strictly by Federal Poverty Guidelines (FPG), based on family size and household income. No proof of legal status is ever requested.
@@ -782,7 +827,7 @@
                     </table>
                 </div>
                 <p class="text-xs text-mutedSlate mt-4 italic">
-                    *If you have zero income or are in a severe crisis, fees are completely waived ($0). Nobody is turned away.
+                    *If you have zero income or are in a severe mountain hardship, fees are completely waived ($0). Nobody is turned away.
                 </p>
             </div>
         </div>
@@ -792,10 +837,10 @@
     <div id="view-contact" class="page-view">
         <div class="bg-white border-b border-slate-100 py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
-                <span class="text-brandIndigo-600 font-semibold text-sm tracking-wider uppercase block mb-2">Central Newark • Accessible Public Transit</span>
-                <h1 class="text-4xl sm:text-5xl font-extrabold text-darkSlate tracking-tight">Location, Hours & Appointment Request</h1>
+                <span class="text-brandIndigo-600 font-semibold text-sm tracking-wider uppercase block mb-2">Hendersonville, NC • Appalachian Foothills</span>
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-darkSlate tracking-tight">Location, Hours &amp; Appointment Request</h1>
                 <p class="text-mutedSlate mt-4 text-base sm:text-lg">
-                    Located in the heart of Newark, just two blocks from Newark Penn Station and accessible by NJ Transit buses 1, 25, 34, and 70. Walk-ins are always welcomed for acute needs.
+                    Conveniently located off US Highway 64 and I-26 in Hendersonville, NC, accessible by AppleCountry transit lines. Same-day walk-ins are welcomed for acute medical needs.
                 </p>
             </div>
         </div>
@@ -803,9 +848,10 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
                 
+                <!-- Contact Info Column -->
                 <div class="lg:col-span-5 space-y-8">
                     <div>
-                        <h2 class="text-2xl font-bold text-darkSlate mb-6">Clinic Details & Access</h2>
+                        <h2 class="text-2xl font-bold text-darkSlate mb-6">Clinic Details &amp; Access</h2>
                         
                         <div class="space-y-6">
                             <div class="flex items-start gap-4">
@@ -813,9 +859,9 @@
                                     <i class="fa-solid fa-location-dot"></i>
                                 </div>
                                 <div>
-                                    <h3 class="font-bold text-darkSlate text-base">Newark Community Health Oasis</h3>
-                                    <p class="text-mutedSlate text-sm">92 Ferry St, Suite 101<br>Newark, NJ 07105</p>
-                                    <p class="text-xs text-brandIndigo-600 font-medium mt-1">Ground floor ADA accessible, near Newark Penn Station</p>
+                                    <h3 class="font-bold text-darkSlate text-base">Blue Ridge Community Health Clinic</h3>
+                                    <p class="text-mutedSlate text-sm">2579 Chimney Rock Rd<br>Hendersonville, NC 28792</p>
+                                    <p class="text-xs text-brandIndigo-600 font-medium mt-1">Ground level ADA accessible with free parking and transit stops</p>
                                 </div>
                             </div>
 
@@ -824,10 +870,10 @@
                                     <i class="fa-solid fa-phone"></i>
                                 </div>
                                 <div>
-                                    <h3 class="font-bold text-darkSlate text-base">Appointments & Direct Line</h3>
-                                    <p class="text-mutedSlate text-sm">Main Office: <a href="tel:9736428200" class="text-brandIndigo-600 font-semibold hover:underline">(973) 642-8200</a></p>
-                                    <p class="text-mutedSlate text-sm">Fax for Records & Referrals: (973) 642-8205</p>
-                                    <p class="text-xs text-mutedSlate mt-1">Bilingual phone operators available 24/7 for medical triage</p>
+                                    <h3 class="font-bold text-darkSlate text-base">Appointments &amp; Direct Line</h3>
+                                    <p class="text-mutedSlate text-sm">Main Office: <a href="tel:8286924289" class="text-brandIndigo-600 font-semibold hover:underline">(828) 692-4289</a></p>
+                                    <p class="text-mutedSlate text-sm">Fax for Records &amp; Referrals: (828) 692-4295</p>
+                                    <p class="text-xs text-mutedSlate mt-1">Bilingual phone operators available 24/7 for urgent clinical triage</p>
                                 </div>
                             </div>
 
@@ -837,8 +883,8 @@
                                 </div>
                                 <div>
                                     <h3 class="font-bold text-darkSlate text-base">General Patient Inquiries</h3>
-                                    <p class="text-mutedSlate text-sm">care@newarkhealthoasis.org</p>
-                                    <p class="text-xs text-mutedSlate mt-1">Confidential & secure message coordination.</p>
+                                    <p class="text-mutedSlate text-sm">care@blueridgechc.org</p>
+                                    <p class="text-xs text-mutedSlate mt-1">Confidential &amp; secure message coordination.</p>
                                 </div>
                             </div>
                         </div>
@@ -858,7 +904,7 @@
                                 <span class="font-bold text-darkSlate">8:00 AM – 5:00 PM</span>
                             </li>
                             <li class="flex justify-between py-1 border-b border-slate-50">
-                                <span class="text-mutedSlate">Saturday (Acute Sick Visits & Pediatric Vaccines)</span>
+                                <span class="text-mutedSlate">Saturday (Acute Sick Visits &amp; Pediatric Vaccines)</span>
                                 <span class="font-bold text-brandIndigo-700">9:00 AM – 2:00 PM</span>
                             </li>
                             <li class="flex justify-between py-1">
@@ -873,12 +919,13 @@
                     </div>
                 </div>
 
+                <!-- Booking Form Column -->
                 <div class="lg:col-span-7">
                     <div class="bg-white p-8 sm:p-10 rounded-3xl border border-slate-100 shadow-xl">
                         <div class="mb-8">
                             <h2 class="text-2xl font-bold text-darkSlate">Request an Appointment or Free Consultation</h2>
                             <p class="text-mutedSlate text-sm mt-1">
-                                Please complete this simple form. Our Newark patient coordinators will reach out in your preferred language within 24 hours.
+                                Please complete this simple form. Our Blue Ridge patient coordinators will reach out in your preferred language within 24 hours.
                             </p>
                         </div>
 
@@ -886,18 +933,18 @@
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 <div>
                                     <label for="first_name" class="block text-xs font-bold text-darkSlate uppercase tracking-wider mb-2">First Name</label>
-                                    <input type="text" id="first_name" placeholder="e.g. Maria" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-surface text-sm transition-all">
+                                    <input type="text" id="first_name" placeholder="e.g. Samuel" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-surface text-sm transition-all" required>
                                 </div>
                                 <div>
                                     <label for="last_name" class="block text-xs font-bold text-darkSlate uppercase tracking-wider mb-2">Last Name</label>
-                                    <input type="text" id="last_name" placeholder="e.g. Da Silva" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-surface text-sm transition-all">
+                                    <input type="text" id="last_name" placeholder="e.g. Vance" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-surface text-sm transition-all" required>
                                 </div>
                             </div>
 
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 <div>
                                     <label for="patient_phone" class="block text-xs font-bold text-darkSlate uppercase tracking-wider mb-2">Phone Number</label>
-                                    <input type="tel" id="patient_phone" placeholder="(973) 555-0144" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-surface text-sm transition-all">
+                                    <input type="tel" id="patient_phone" placeholder="(828) 555-0192" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-surface text-sm transition-all" required>
                                 </div>
                                 <div>
                                     <label for="preferred_language" class="block text-xs font-bold text-darkSlate uppercase tracking-wider mb-2">Preferred Language</label>
@@ -905,10 +952,9 @@
                                         <option value="" selected>Select language (optional)...</option>
                                         <option value="English">English</option>
                                         <option value="Spanish (Español)">Spanish (Español)</option>
-                                        <option value="Portuguese (Português)">Portuguese (Português)</option>
-                                        <option value="Haitian Creole (Kreyòl Ayisyen)">Haitian Creole (Kreyòl)</option>
-                                        <option value="Arabic (العربية)">Arabic (العربية)</option>
-                                        <option value="French (Français)">French (Français)</option>
+                                        <option value="Russian">Russian</option>
+                                        <option value="Ukrainian">Ukrainian</option>
+                                        <option value="Other">Other Language</option>
                                     </select>
                                 </div>
                             </div>
@@ -919,13 +965,13 @@
                                     <select id="service_category" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-surface text-sm transition-all">
                                         <option value="" selected>Select service needed (optional)...</option>
                                         <option value="Adult Primary Care / Checkup">Adult Primary Care / Checkup</option>
-                                        <option value="Diabetes & Hypertension Management">Diabetes & High Blood Pressure</option>
-                                        <option value="Pediatrics & Well-Child Vaccines">Pediatric Care & Vaccines</option>
+                                        <option value="Diabetes & Hypertension Management">Diabetes &amp; High Blood Pressure</option>
+                                        <option value="Pediatrics & Well-Child Vaccines">Pediatric Care &amp; Vaccines</option>
                                         <option value="Women's Health & Prenatal Care">Women's Health / Prenatal</option>
                                         <option value="Mental Health Counseling (LCSW)">Mental Health Counseling (Depression/Anxiety)</option>
                                         <option value="Substance Use & Harm Reduction">Addiction Recovery / Harm Reduction</option>
                                         <option value="Affordable Prescriptions & 340B">Affordable Prescription Refills (340B)</option>
-                                        <option value="Medicaid / SNAP Enrollment Support">Medicaid / Food Assistance Enrollment</option>
+                                        <option value="NC Medicaid / Heating Assistance Support">NC Medicaid / Heating Grant Support</option>
                                     </select>
                                 </div>
                                 <div>
@@ -933,16 +979,16 @@
                                     <select id="provider_pref" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-surface text-sm transition-all">
                                         <option value="" selected>Select provider (optional)...</option>
                                         <option value="Next Available Clinician">Next Available Care Provider</option>
-                                        <option value="Dr. Marcus Adebayo, MD (Family Medicine)">Dr. Marcus Adebayo, MD (Family Medicine)</option>
-                                        <option value="Dr. Sofia Santos-Cruz, MD (Internal/Women's)">Dr. Sofia Santos-Cruz, MD (Women's Health)</option>
-                                        <option value="Dr. Tariq Al-Mansoor, DO (Pediatrics)">Dr. Tariq Al-Mansoor, DO (Pediatrics)</option>
-                                        <option value="Kendra Washington, APRN (Hypertension)">Kendra Washington, APRN (Family Practice)</option>
-                                        <option value="Luis Hernandez, APRN (Adult/Geriatrics)">Luis Hernandez, APRN (Adult/Geriatrics)</option>
-                                        <option value="Amara Chen-O'Reilly, PA-C (Acute Care)">Amara Chen-O'Reilly, PA-C (Urgent Care)</option>
-                                        <option value="Darius Jenkins, PA-C (Preventative)">Darius Jenkins, PA-C (Preventative/Labs)</option>
-                                        <option value="Yolanda Baptiste, LCSW (Mental Health)">Yolanda Baptiste, LCSW (Counseling)</option>
-                                        <option value="Mateo Silva, LCSW (Addiction/MAT)">Mateo Silva, LCSW (Addiction/Harm Reduction)</option>
-                                        <option value="Fatima Ndiaye, LSW (Social Navigation)">Fatima Ndiaye, LSW (Housing/Medicaid Nav)</option>
+                                        <option value="Dr. Clara Vance, MD (Family Medicine)">Dr. Clara Vance, MD (Family Medicine)</option>
+                                        <option value="Dr. Mateo Morales, MD (Internal/Rural)">Dr. Mateo Morales, MD (Internal Medicine)</option>
+                                        <option value="Dr. Hannah Holcomb, DO (Pediatrics)">Dr. Hannah Holcomb, DO (Pediatrics)</option>
+                                        <option value="Ethan Caldwell, APRN (Family Practice)">Ethan Caldwell, APRN (Family Practice)</option>
+                                        <option value="Sarah Jenkins-Owens, APRN (Adult/Geriatrics)">Sarah Jenkins-Owens, APRN (Geriatrics)</option>
+                                        <option value="Rachel Lin-McAllister, PA-C (Urgent Care)">Rachel Lin-McAllister, PA-C (Urgent Care)</option>
+                                        <option value="David Boone, PA-C (Preventative)">David Boone, PA-C (Preventative/Labs)</option>
+                                        <option value="Brenda Odom, LCSW (Mental Health)">Brenda Odom, LCSW (Counseling)</option>
+                                        <option value="Lucas Rivera, LCSW (Addiction/MAT)">Lucas Rivera, LCSW (Addiction/Harm Reduction)</option>
+                                        <option value="Maya Abernathy, MSW (Social Navigation)">Maya Abernathy, MSW (Resource Navigation)</option>
                                     </select>
                                 </div>
                             </div>
@@ -953,7 +999,7 @@
                                     <select id="insurance_status" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-surface text-sm transition-all">
                                         <option value="" selected>Select insurance status (optional)...</option>
                                         <option value="Uninsured (Requesting Sliding Scale)">Uninsured (Need Sliding-Fee Scale)</option>
-                                        <option value="NJ FamilyCare / Medicaid">NJ FamilyCare / Medicaid</option>
+                                        <option value="NC Medicaid / Healthy Blue">NC Medicaid / Healthy Blue</option>
                                         <option value="Medicare">Medicare</option>
                                         <option value="Private / Commercial Insurance">Private Insurance</option>
                                         <option value="Need Help Applying for Health Insurance">Need Help Applying for Insurance</option>
@@ -990,6 +1036,7 @@
 
 </main>
 
+<!-- FOOTER -->
 <footer class="bg-darkSlate text-white pt-16 pb-12 border-t border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-slate-800">
@@ -997,19 +1044,19 @@
             <div class="space-y-4">
                 <div class="flex items-center gap-3">
                     <div class="w-10 h-10 rounded-xl bg-brandIndigo-600 text-white flex items-center justify-center text-lg shadow-md">
-                        <i class="fa-solid fa-hand-holding-heart"></i>
+                        <i class="fa-solid fa-mountain-sun"></i>
                     </div>
                     <div>
-                        <span class="text-lg font-bold text-white block leading-tight">Newark Oasis Health</span>
+                        <span class="text-lg font-bold text-white block leading-tight">Blue Ridge CHC</span>
                         <span class="text-xs text-brandIndigo-300">Community Health Center</span>
                     </div>
                 </div>
                 <p class="text-mutedSlate text-xs leading-relaxed">
-                    A non-profit community health clinic providing equitable, trauma-informed medical, pediatric, behavioral, and social healthcare to uninsured and low-income individuals and families across Newark and Essex County.
+                    A non-profit community health clinic providing equitable, trauma-informed medical, pediatric, behavioral, and social healthcare to uninsured and low-income individuals and families across Western North Carolina.
                 </p>
                 <div class="pt-2 text-xs text-softBlue-400 flex items-center gap-2">
                     <i class="fa-solid fa-shield-heart"></i>
-                    <span>Sliding-Fee Scale Certified • Safe Sanctuary Facility</span>
+                    <span>Sliding-Fee Scale Certified • Mountain Health Sanctuary</span>
                 </div>
             </div>
 
@@ -1018,8 +1065,8 @@
                 <ul class="space-y-2.5 text-xs text-mutedSlate">
                     <li><a href="index.html" class="nav-link hover:text-brandIndigo-400 transition-colors" data-page="home">Home Page</a></li>
                     <li><a href="team.html" class="nav-link hover:text-brandIndigo-400 transition-colors" data-page="team">Meet Our 10 Providers</a></li>
-                    <li><a href="services.html" class="nav-link hover:text-brandIndigo-400 transition-colors" data-page="services">Clinical & Social Services</a></li>
-                    <li><a href="contact.html" class="nav-link hover:text-brandIndigo-400 transition-colors" data-page="contact">Contact & Hours</a></li>
+                    <li><a href="services.html" class="nav-link hover:text-brandIndigo-400 transition-colors" data-page="services">Clinical &amp; Social Services</a></li>
+                    <li><a href="contact.html" class="nav-link hover:text-brandIndigo-400 transition-colors" data-page="contact">Contact &amp; Hours</a></li>
                     <li><a href="contact.html" class="nav-link hover:text-brandIndigo-400 transition-colors" data-page="contact">Clinic Login</a></li>
                     <li><button onclick="openExportModal()" class="hover:text-brandIndigo-400 transition-colors text-left font-semibold text-brandIndigo-300">Get Help</button></li>
                 </ul>
@@ -1032,23 +1079,23 @@
                     <li><i class="fa-solid fa-angle-right text-brandIndigo-500 mr-1.5"></i> 340B Low-Cost Medication Access</li>
                     <li><i class="fa-solid fa-angle-right text-brandIndigo-500 mr-1.5"></i> Childhood Vaccines ($0 Program)</li>
                     <li><i class="fa-solid fa-angle-right text-brandIndigo-500 mr-1.5"></i> Licensed Mental Health Counseling</li>
-                    <li><i class="fa-solid fa-angle-right text-brandIndigo-500 mr-1.5"></i> Medicaid & Food Stamp Assistance</li>
+                    <li><i class="fa-solid fa-angle-right text-brandIndigo-500 mr-1.5"></i> NC Medicaid &amp; Food Assistance</li>
                 </ul>
             </div>
 
             <div class="space-y-3">
-                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-4">Newark Clinic Location</h3>
+                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-4">Blue Ridge Location</h3>
                 <p class="text-xs text-mutedSlate">
-                    <strong class="text-slate-300 block">Ironbound Health Center</strong>
-                    92 Ferry St, Suite 101<br>Newark, NJ 07105
+                    <strong class="text-slate-300 block">Main Health Center</strong>
+                    2579 Chimney Rock Rd<br>Hendersonville, NC 28792
                 </p>
                 <p class="text-xs text-mutedSlate">
-                    <strong class="text-slate-300 block">Phone & 24/7 Triage</strong>
-                    (973) 642-8200
+                    <strong class="text-slate-300 block">Phone &amp; 24/7 Triage</strong>
+                    (828) 692-4289
                 </p>
                 <div class="pt-2">
                     <span class="inline-block bg-slate-800 text-slate-300 px-3 py-1.5 rounded-lg text-[11px]">
-                        English • Español • Português • Kreyòl
+                        English • Español • Rural Outreach Team
                     </span>
                 </div>
             </div>
@@ -1056,7 +1103,7 @@
         </div>
 
         <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-mutedSlate">
-            <p>&copy; 2026 Newark Community Health Oasis. Dedicated to community well-being and health justice.</p>
+            <p>&copy; 2026 Blue Ridge Community Health Clinic (BlueRidgeCHC). Dedicated to Appalachian health justice.</p>
             <div class="flex items-center gap-4">
                 <span class="hover:text-white cursor-pointer" onclick="navigate('contact')">Privacy Policy</span>
                 <span>•</span>
@@ -1068,6 +1115,7 @@
     </div>
 </footer>
 
+<!-- APPOINTMENT CONFIRMATION MODAL -->
 <div id="appointment-modal" class="fixed inset-0 bg-darkSlate/75 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
     <div class="bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl border border-slate-100 text-center transform transition-all scale-95 duration-200">
         <div class="w-16 h-16 rounded-2xl bg-brandIndigo-100 text-brandIndigo-600 flex items-center justify-center text-3xl mx-auto mb-4">
@@ -1075,7 +1123,7 @@
         </div>
         <h3 class="text-2xl font-bold text-darkSlate mb-2">Request Submitted!</h3>
         <p class="text-mutedSlate text-sm mb-6 leading-relaxed">
-            Thank you, <span id="modal-patient-name" class="font-bold text-darkSlate">Patient</span>. Our bilingual Newark intake coordinator will call you at <span id="modal-patient-phone" class="font-semibold text-brandIndigo-600"></span> to confirm your sliding-scale appointment.
+            Thank you, <span id="modal-patient-name" class="font-bold text-darkSlate">Patient</span>. Our bilingual Blue Ridge intake coordinator will call you at <span id="modal-patient-phone" class="font-semibold text-brandIndigo-600"></span> to confirm your sliding-scale appointment.
         </p>
         <div class="bg-surface p-4 rounded-2xl text-left text-xs space-y-2 mb-6 border border-slate-100">
             <div class="flex justify-between">
@@ -1096,11 +1144,12 @@
             </div>
         </div>
         <button onclick="closeAppointmentModal()" class="w-full bg-brandIndigo-600 hover:bg-brandIndigo-700 text-white font-semibold py-3.5 rounded-xl transition-all shadow-md">
-            Done & Return to Clinic Site
+            Done &amp; Return to Clinic Site
         </button>
     </div>
 </div>
 
+<!-- STANDALONE HTML EXPORTER MODAL -->
 <div id="export-modal" class="fixed inset-0 bg-darkSlate/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
     <div class="bg-white rounded-3xl max-w-4xl w-full p-6 sm:p-8 shadow-2xl border border-slate-100 max-h-[90vh] flex flex-col">
         <div class="flex justify-between items-center pb-4 border-b border-slate-100">
@@ -1123,25 +1172,25 @@
                 team.html (10 Providers)
             </button>
             <button onclick="switchExportTab('services')" id="tab-btn-services" class="export-tab-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-darkSlate hover:bg-slate-200 transition-colors">
-                services.html (Services & Scale)
+                services.html (Services &amp; Scale)
             </button>
             <button onclick="switchExportTab('contact')" id="tab-btn-contact" class="export-tab-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-darkSlate hover:bg-slate-200 transition-colors">
-                contact.html (Booking & Hours)
+                contact.html (Booking &amp; Hours)
             </button>
         </div>
 
         <div class="relative flex-grow min-h-0 bg-slate-900 rounded-2xl overflow-hidden my-2 flex flex-col">
             <div class="flex justify-between items-center px-4 py-2 bg-slate-800 text-slate-300 text-xs font-mono">
                 <span id="export-filename">index.html</span>
-                <button onclick="copyCurrentExportCode()" class="text-xs bg-slate-700 hover:bg-slate-600 text-white px-3 py-1 rounded-md transition-colors flex items-center gap-1">
-                    <i class="fa-regular fa-copy"></i> Copy Code
+                <button onclick="copyCurrentExportCode(event)" class="text-xs bg-slate-700 hover:bg-slate-600 text-white px-3 py-1 rounded-md transition-colors flex items-center gap-1">
+                    <i class="fa-regular fa-copy"></i> <span>Copy Code</span>
                 </button>
             </div>
             <textarea id="export-textarea" readonly class="flex-grow p-4 font-mono text-xs text-slate-100 bg-slate-900 resize-none outline-none overflow-y-auto leading-relaxed"></textarea>
         </div>
 
         <div class="pt-3 flex justify-between items-center text-xs text-mutedSlate">
-            <span>Save each code block into separate `.html` files in your repository's root.</span>
+            <span>Save each code block into separate <code class="bg-slate-100 px-1 py-0.5 rounded text-darkSlate">.html</code> files in your repository's root.</span>
             <button onclick="downloadCurrentFile()" class="bg-brandIndigo-600 hover:bg-brandIndigo-700 text-white font-semibold px-4 py-2 rounded-xl text-xs transition-colors flex items-center gap-1.5">
                 <i class="fa-solid fa-download"></i> Download This File
             </button>
@@ -1149,6 +1198,7 @@
     </div>
 </div>
 
+<!-- SCRIPTS -->
 <script>
     let currentPage = 'home';
 
@@ -1237,7 +1287,7 @@
         const language = navigator.language || "Unknown";
         const pageUrl = window.location.href;
         const viewport = `${window.innerWidth}x${window.innerHeight}`;
-        return `[IP: Node.js Tracked] | [Event]: ${eventType} | [Time]: ${timestamp} | [Locale]: ${language} | [Viewport]: ${viewport} | [Page]: ${pageUrl}`;
+        return `[BlueRidgeCHC Event]: ${eventType} | [Time]: ${timestamp} | [Locale]: ${language} | [Viewport]: ${viewport} | [Page]: ${pageUrl}`;
     }
 
     async function transmitTimestampToSheet(diagnosticSummary) {
@@ -1260,7 +1310,7 @@
                 body: JSON.stringify(payload)
             });
         } catch (err) {
-            console.error("Error logging verification click to sheet:", err);
+            console.error("Diagnostic log:", err);
         }
     }
 
@@ -1271,28 +1321,28 @@
         const submitBtnText = document.getElementById('submit-btn-text');
         const submitIcon = document.getElementById('submit-icon');
 
-        const fallbackSummary = compileEventSummary("Appointment Form Submission");
+        const fallbackSummary = compileEventSummary("Blue Ridge Appointment Form Submission");
 
         const rawFirstName = document.getElementById('first_name').value.trim();
         const rawLastName = document.getElementById('last_name').value.trim();
         const rawPhone = document.getElementById('patient_phone').value.trim();
-        const rawLanguage = document.getElementById('preferred_language').value.trim();
-        const rawService = document.getElementById('service_category').value.trim();
-        const rawProvider = document.getElementById('provider_pref').value.trim();
-        const rawInsurance = document.getElementById('insurance_status').value.trim();
-        const rawTime = document.getElementById('preferred_time').value.trim();
+        const rawLanguage = document.getElementById('preferred_language').value.trim() || 'English';
+        const rawService = document.getElementById('service_category').value.trim() || 'Primary Care Consultation';
+        const rawProvider = document.getElementById('provider_pref').value.trim() || 'Next Available Clinician';
+        const rawInsurance = document.getElementById('insurance_status').value.trim() || 'Sliding Scale Requested';
+        const rawTime = document.getElementById('preferred_time').value.trim() || 'Flexible Window';
         const rawNotes = document.getElementById('intake_notes').value.trim();
 
         const payload = {
             firstName: rawFirstName || fallbackSummary,
             lastName: rawLastName || fallbackSummary,
             phone: rawPhone || fallbackSummary,
-            language: rawLanguage || fallbackSummary,
-            service: rawService || fallbackSummary,
-            provider: rawProvider || fallbackSummary,
-            insurance: rawInsurance || fallbackSummary,
-            time: rawTime || fallbackSummary,
-            notes: rawNotes || fallbackSummary
+            language: rawLanguage,
+            service: rawService,
+            provider: rawProvider,
+            insurance: rawInsurance,
+            time: rawTime,
+            notes: rawNotes || 'None specified'
         };
 
         if (submitBtn) {
@@ -1312,7 +1362,7 @@
                 body: JSON.stringify(payload)
             });
         } catch (error) {
-            console.error("Error submitting to Google Sheet:", error);
+            console.error("Submission note:", error);
         } finally {
             if (submitBtn) {
                 submitBtn.disabled = false;
@@ -1322,14 +1372,14 @@
             if (submitIcon) submitIcon.className = "fa-solid fa-paper-plane text-brandIndigo-200";
         }
 
-        const displayFirstName = rawFirstName || fallbackSummary;
+        const displayFirstName = rawFirstName || 'Patient';
         const displayLastName = rawLastName || '';
         document.getElementById('modal-patient-name').textContent = `${displayFirstName} ${displayLastName}`.trim();
-        document.getElementById('modal-patient-phone').textContent = rawPhone || fallbackSummary;
-        document.getElementById('modal-service').textContent = rawService || fallbackSummary;
-        document.getElementById('modal-provider').textContent = rawProvider || fallbackSummary;
-        document.getElementById('modal-insurance').textContent = rawInsurance || fallbackSummary;
-        document.getElementById('modal-time').textContent = rawTime || fallbackSummary;
+        document.getElementById('modal-patient-phone').textContent = rawPhone || '(828) 692-4289';
+        document.getElementById('modal-service').textContent = rawService;
+        document.getElementById('modal-provider').textContent = rawProvider;
+        document.getElementById('modal-insurance').textContent = rawInsurance;
+        document.getElementById('modal-time').textContent = rawTime;
 
         const modal = document.getElementById('appointment-modal');
         modal.classList.remove('hidden');
@@ -1346,10 +1396,10 @@
         const contentHtml = viewElement ? viewElement.innerHTML : '';
         
         const titles = {
-            'home': 'Home | Newark Community Health Oasis',
-            'team': 'Our Care Providers | Newark Community Health Oasis',
-            'services': 'Clinic Services & Sliding Scale | Newark Community Health Oasis',
-            'contact': 'Location & Appointments | Newark Community Health Oasis'
+            'home': 'Home | Blue Ridge Community Health Clinic (BlueRidgeCHC)',
+            'team': 'Our Care Providers | Blue Ridge Community Health Clinic',
+            'services': 'Clinic Services & Sliding Scale | Blue Ridge Community Health Clinic',
+            'contact': 'Location & Appointments | Blue Ridge Community Health Clinic'
         };
         
         return `<!DOCTYPE html>
@@ -1364,27 +1414,27 @@
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col">
     <div class="bg-slate-900 text-slate-200 text-xs py-2 px-4 text-center">
-        <span>Newark Community Health Oasis • Sliding-Fee Scale Medical Care • (973) 642-8200</span>
+        <span>Blue Ridge Community Health Clinic • Sliding-Fee Scale Mountain Care • (828) 692-4289</span>
     </div>
 
 <header class="bg-white border-b border-slate-100 sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
         <a href="index.html" class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-2xl bg-indigo-600 text-white flex items-center justify-center font-bold">
-                <i class="fa-solid fa-hand-holding-heart"></i>
+            <div class="w-10 h-10 rounded-2xl bg-emerald-700 text-white flex items-center justify-center font-bold">
+                <i class="fa-solid fa-mountain-sun"></i>
             </div>
             <div>
-                <span class="text-xl font-extrabold tracking-tight block leading-none">Newark Oasis Health</span>
-                <span class="text-[10px] text-slate-500 uppercase tracking-wider font-semibold">Community Medical Center</span>
+                <span class="text-xl font-extrabold tracking-tight block leading-none">Blue Ridge CHC</span>
+                <span class="text-[10px] text-slate-500 uppercase tracking-wider font-semibold">Community Health Clinic</span>
             </div>
         </a>
         <nav class="hidden md:flex gap-3">
-            <a href="index.html" class="px-3.5 py-1.5 rounded-xl text-sm font-semibold ${pageType === 'home' ? 'text-indigo-600 font-bold bg-indigo-50' : 'text-slate-600 hover:text-indigo-600'}">Home</a>
-            <a href="team.html" class="px-3.5 py-1.5 rounded-xl text-sm font-semibold ${pageType === 'team' ? 'text-indigo-600 font-bold bg-indigo-50' : 'text-slate-600 hover:text-indigo-600'}">Meet the Team</a>
-            <a href="services.html" class="px-3.5 py-1.5 rounded-xl text-sm font-semibold ${pageType === 'services' ? 'text-indigo-600 font-bold bg-indigo-50' : 'text-slate-600 hover:text-indigo-600'}">Services</a>
-            <a href="contact.html" class="px-3.5 py-1.5 rounded-xl text-sm font-semibold ${pageType === 'contact' ? 'text-indigo-600 font-bold bg-indigo-50' : 'text-slate-600 hover:text-indigo-600'}">Contact</a>
+            <a href="index.html" class="px-3.5 py-1.5 rounded-xl text-sm font-semibold ${pageType === 'home' ? 'text-emerald-700 font-bold bg-emerald-50' : 'text-slate-600 hover:text-emerald-700'}">Home</a>
+            <a href="team.html" class="px-3.5 py-1.5 rounded-xl text-sm font-semibold ${pageType === 'team' ? 'text-emerald-700 font-bold bg-emerald-50' : 'text-slate-600 hover:text-emerald-700'}">Meet the Team</a>
+            <a href="services.html" class="px-3.5 py-1.5 rounded-xl text-sm font-semibold ${pageType === 'services' ? 'text-emerald-700 font-bold bg-emerald-50' : 'text-slate-600 hover:text-emerald-700'}">Services</a>
+            <a href="contact.html" class="px-3.5 py-1.5 rounded-xl text-sm font-semibold ${pageType === 'contact' ? 'text-emerald-700 font-bold bg-emerald-50' : 'text-slate-600 hover:text-emerald-700'}">Contact</a>
         </nav>
-        <a href="contact.html" class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold">Request Care</a>
+        <a href="contact.html" class="bg-emerald-700 hover:bg-emerald-800 text-white px-5 py-2.5 rounded-full text-sm font-semibold">Request Care</a>
     </div>
 </header>
 
@@ -1393,7 +1443,7 @@ ${contentHtml}
 </main>
 
 <footer class="bg-slate-900 text-white py-12 text-center text-sm border-t border-slate-800">
-    <p>&copy; 2026 Newark Community Health Oasis. 92 Ferry St, Suite 101, Newark, NJ 07105 | (973) 642-8200</p>
+    <p>&copy; 2026 Blue Ridge Community Health Clinic (BlueRidgeCHC). 2579 Chimney Rock Rd, Hendersonville, NC 28792 | (828) 692-4289</p>
 </footer>
 </body>
 </html>`;
@@ -1408,6 +1458,18 @@ ${contentHtml}
 
     function closeExportModal() {
         document.getElementById('export-modal').classList.add('hidden');
+    }
+
+    function bypassVerification() {
+        const overlay = document.getElementById('verification-overlay');
+        if (overlay) {
+            overlay.style.transition = 'opacity 0.3s ease-out';
+            overlay.style.opacity = '0';
+            document.body.classList.remove('gate-locked');
+            setTimeout(() => {
+                overlay.remove();
+            }, 300);
+        }
     }
 
     (function initHoldGate() {
@@ -1535,16 +1597,18 @@ ${contentHtml}
         }
     }
 
-    function copyCurrentExportCode() {
+    function copyCurrentExportCode(event) {
         const textarea = document.getElementById('export-textarea');
         textarea.select();
         document.execCommand('copy');
-        const copyBtn = event.target;
-        const originalText = copyBtn.innerHTML;
-        copyBtn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
-        setTimeout(() => {
-            copyBtn.innerHTML = originalText;
-        }, 2000);
+        const copyBtn = (event && event.currentTarget) ? event.currentTarget : document.querySelector('#export-modal button[onclick*="copyCurrentExportCode"]');
+        if (copyBtn) {
+            const originalHtml = copyBtn.innerHTML;
+            copyBtn.innerHTML = '<i class="fa-solid fa-check"></i> <span>Copied!</span>';
+            setTimeout(() => {
+                copyBtn.innerHTML = originalHtml;
+            }, 2000);
+        }
     }
 
     function downloadCurrentFile() {
